@@ -1,43 +1,163 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anchor Hover Effects</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<style> .cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
+  <title>Hover Effects</title>
+  <style>
 * {
-box-sizing:border-box;
+  margin: 0;
 }
-</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./style.css">
 
+body {
+  font-family: "Open Sans";
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  margin-top: 6em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+h1 {
+  font-family: "Merriweather";
+  text-align: center;
+  flex: none;
+  word-break: break-word;
+  font-size: 3em;
+}
+
+p {
+  line-height: 1.8;
+}
+p + p {
+  margin-top: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  cursor: pointer;
+}
+a.grow::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  border-bottom: 1px solid tomato;
+  transition: 0.4s;
+}
+a.grow:hover::after {
+  width: 100%;
+  left: 0;
+}
+a.highlight::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: -2px;
+  padding: 0 2px;
+  width: calc(100% + 2px);
+  height: 1px;
+  border-bottom: 1px solid tomato;
+  transition: 0.4s;
+}
+a.highlight:hover::after {
+  top: 0;
+  height: 1.5em;
+  background-color: rgba(255, 99, 71, 0.5);
+  border-color: transparent;
+}
+a.swipe::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: -2px;
+  padding: 0 2px;
+  width: calc(100% + 2px);
+  height: 1px;
+  border-bottom: 1px solid tomato;
+  transition: 0.4s;
+}
+a.swipe::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -2px;
+  padding: 0 2px;
+  width: 1px;
+  height: 1.5em;
+  transition: 0.4s;
+}
+a.swipe:hover::after {
+  width: 100%;
+  background-color: rgba(255, 99, 71, 0.75);
+}
+a.magic-btn::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: -2px;
+  padding: 0 2px;
+  width: calc(100% + 2px);
+  height: 1px;
+  border-bottom: 1px solid tomato;
+  transition: 0.4s;
+}
+a.magic-btn::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: calc(50% - 4px);
+  padding: 0 2px;
+  width: 0;
+  height: 0;
+  border: 1px solid transparent;
+  transition: 0.4s;
+}
+a.magic-btn:hover::before {
+  border-color: transparent;
+}
+a.magic-btn:hover::after {
+  width: 100%;
+  height: 1.25em;
+  left: -1em;
+  bottom: -0.35em;
+  padding: 0.5em 1em;
+  border-color: tomato;
+  background-color: tomato;
+  border-radius: 2.5em;
+}
+a.magic-btn {
+  display: inline-block;
+  transition: 0.3s;
+  transition-delay: 0s;
+  transform: scale(1);
+}
+a.magic-btn:hover {
+  color: #fff;
+  transform: scale(1.4);
+  transition-delay: 0.11s;
+}
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
 <section class="content">
-<h1>
-	Cryptozoology
-</h1>
-<p>
-Cryptozoology is a <a class="grow" href="https://en.wikipedia.org/wiki/Pseudoscience">pseudoscience</a> involving the search for creatures whose existence has not been proven due to lack of evidence. The animals cryptozoologists study are referred to as cryptids by cryptozoologists. This includes living examples of creatures that are otherwise considered extinct, such as non-avian dinosaurs; animals whose existence lacks physical evidence but which appear in folklore, such as Bigfoot and <a class="magic-btn" href="https://en.wikipedia.org/wiki/Chupacabra">chupacabras;</a> and wild animals dramatically outside their normal geographic ranges, such as phantom cats.
-</p>	
-<p>
-	Cryptozoology is not a recognized branch of <a class="highlight" href="https://en.wikipedia.org/wiki/Zoology">zoology</a> nor a discipline of science. It is an example of pseudoscience because it relies heavily upon anecdotal evidence, stories, and alleged sightings. While cryptozoology takes a pseudoscientific approach to creatures and beings from the folklore record, the academic study of folklore is <a class="swipe" href="https://en.wikipedia.org/wiki/Folkloristics">folkloristics</a>.
-</p>
-	
+<h1>Cryptozoology</h1>
+<p>Cryptozoology is a <a class="grow" href="https://en.wikipedia.org/wiki/Pseudoscience">pseudoscience</a> involving the search for creatures whose existence has not been proven due to lack of evidence. The animals cryptozoologists study are referred to as cryptids by cryptozoologists. This includes living examples of creatures that are otherwise considered extinct, such as non-avian dinosaurs; animals whose existence lacks physical evidence but which appear in folklore, such as Bigfoot and <a class="magic-btn" href="https://en.wikipedia.org/wiki/Chupacabra">chupacabras;</a> and wild animals dramatically outside their normal geographic ranges, such as phantom cats.</p>	
+<p>Cryptozoology is not a recognized branch of <a class="highlight" href="https://en.wikipedia.org/wiki/Zoology">zoology</a> nor a discipline of science. It is an example of pseudoscience because it relies heavily upon anecdotal evidence, stories, and alleged sightings. While cryptozoology takes a pseudoscientific approach to creatures and beings from the folklore record, the academic study of folklore is <a class="swipe" href="https://en.wikipedia.org/wiki/Folkloristics">folkloristics</a>.</p>	
 </section>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
 </body>
 </html>
