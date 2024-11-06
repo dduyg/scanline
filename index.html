@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Works List</title>
+    <title>Work List</title>
     <style>
-      /* Basic reset */
+        /* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,109 +14,119 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e2a32; /* Adjust background color based on the screenshot */
-    color: #f0f0f0;
-    padding: 20px;
+    background-color: #2b3b45;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* Container */
 .container {
     display: flex;
-    gap: 20px;
+    gap: 2rem;
+    width: 80%;
 }
 
-.tags {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 150px;
+/* Filter Tags (left column on desktop, top on mobile) */
+.filter-tags {
+    min-width: 150px;
 }
 
-.tag {
-    font-size: 14px;
-    color: #bbb;
+.filter-tags ul {
+    list-style: none;
+}
+
+.filter-tags li {
+    padding: 8px 0;
+    color: #a0a0a0;
     cursor: pointer;
 }
 
-.tag.active {
-    color: #f0f0f0;
+.filter-tags li.active {
+    color: #ffffff;
     font-weight: bold;
 }
 
-.works {
+/* Works List (right column) */
+.works-list {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
-.work-item {
-    border-top: 1px solid #bbb;
-    padding-top: 10px;
+.work-entry {
+    border-top: 1px solid #555;
+    padding: 1rem 0;
 }
 
 .date {
-    font-size: 14px;
-    color: #bbb;
+    color: #aaa;
+    font-weight: bold;
 }
 
 .title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #f0f0f0;
+    font-size: 1.2em;
     margin-top: 5px;
 }
 
 .details {
-    font-size: 14px;
-    color: #bbb;
-    margin-top: 3px;
+    margin-top: 5px;
+    color: #999;
 }
 
-/* Responsive design for mobile view */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        width: 90%;
     }
 
-    .tags {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin-bottom: 20px;
+    .filter-tags {
+        order: 1;
     }
 
-    .work-item {
-        padding-top: 10px;
-        border-top: 1px solid #444;
+    .works-list {
+        order: 2;
+    }
+
+    .work-entry {
+        padding: 1rem 0;
+        border-top: 1px solid #555;
     }
 }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="tags">
-            <p class="tag active">All</p>
-            <p class="tag">作詞</p>
-            <p class="tag">作曲</p>
-            <p class="tag">編曲</p>
-            <p class="tag">プロデュース</p>
-            <p class="tag">ボーカルディレクション</p>
-            <p class="tag">BGM</p>
-            <p class="tag">劇伴</p>
-            <p class="tag">Remix</p>
+        <!-- Filter Tags Column -->
+        <div class="filter-tags">
+            <ul>
+                <li class="active">All</li>
+                <li>作詞</li>
+                <li>作曲</li>
+                <li>編曲</li>
+                <li>プロデュース</li>
+                <li>ボーカルディレクション</li>
+                <li>BGM</li>
+                <li>劇伴</li>
+                <li>Remix</li>
+            </ul>
         </div>
-        <div class="works">
-            <div class="work-item">
-                <p class="date">2024.08</p>
-                <p class="title">白迎 - Carat.</p>
-                <p class="details">作詞 / 作曲 / ボーカルディレクション</p>
+
+        <!-- Works List Column -->
+        <div class="works-list">
+            <!-- Example of a work entry -->
+            <div class="work-entry">
+                <div class="date">2024.08</div>
+                <div class="title">白迄 - Carat.</div>
+                <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
             </div>
-            <div class="work-item">
-                <p class="date">2024.06</p>
-                <p class="title">WaMi - ANGeLiC GiRL</p>
-                <p class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</p>
+            <div class="work-entry">
+                <div class="date">2024.06</div>
+                <div class="title">WaMi - ANGeLiC GiRL</div>
+                <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
             </div>
-            <!-- Add additional work items here, following the same structure -->
+            <!-- Additional work entries would go here following the same structure -->
         </div>
     </div>
 </body>
