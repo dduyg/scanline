@@ -4,101 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 Error</title>
+    <title>404 Error - Not Found</title>
     <style>
-        /* Basic reset and body styling */
-        * {
+        /* Global reset */
+        body, h1, p {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body {
             font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(45deg, #ff0077, #33ccff);
-            color: #fff;
-            text-align: center;
-            height: 100vh;
+            color: white;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff77ff, #ff00ff);
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            height: 100vh;
+            text-align: center;
             overflow: hidden;
-            font-size: 18px;
-            line-height: 1.6;
+            position: relative;
         }
 
-        /* Glitch effect animation */
-        @keyframes glitch {
-            0% { transform: translateX(2px); }
-            20% { transform: translateX(-2px); }
-            40% { transform: translateX(2px); }
-            60% { transform: translateX(-2px); }
-            80% { transform: translateX(2px); }
-            100% { transform: translateX(0); }
+        .vaporwave-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.1);
+            letter-spacing: 5px;
+        }
+
+        .vaporwave-bg span {
+            display: block;
+            animation: glitch 1.5s infinite linear alternate-reverse;
         }
 
         h1 {
             font-size: 4rem;
-            font-weight: bold;
             text-transform: uppercase;
-            color: #ff0055;
             letter-spacing: 5px;
-            animation: glitch 1s infinite;
-            position: relative;
+            animation: neon 1.5s ease-in-out infinite alternate;
         }
 
-        .message {
+        p {
             font-size: 1.2rem;
-            margin: 20px 0;
+            margin-top: 10px;
             color: #ffcc00;
+            animation: glitch-text 1.5s infinite linear alternate;
         }
 
-        .link {
-            text-decoration: none;
-            color: #ffcc00;
-            border: 2px solid #ffcc00;
-            padding: 10px 20px;
+        .cta-button {
+            display: inline-block;
+            background-color: #ff00ff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin-top: 30px;
             border-radius: 5px;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .link:hover {
-            background-color: #ffcc00;
-            color: #1a1a1a;
-            box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.6);
-        }
-
-        .background-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: -1;
-        }
-
-        .datacoder {
-            position: absolute;
-            bottom: 30px;
-            font-size: 1rem;
-            color: #00ff99;
-            font-weight: bold;
+            text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: glitch 2s infinite alternate-reverse;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ff77ff;
+            transform: scale(1.1);
+        }
+
+        /* Animation Effects */
+        @keyframes neon {
+            0% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
+            50% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
+            100% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(-2px, 0) scale(1); }
+            25% { transform: translate(2px, -2px) scale(1.1); }
+            50% { transform: translate(-2px, 2px) scale(1.05); }
+            75% { transform: translate(2px, 0) scale(1.1); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes glitch-text {
+            0% { opacity: 0.8; text-shadow: 2px 0 red, -2px 0 blue; }
+            100% { opacity: 1; text-shadow: none; }
         }
     </style>
 </head>
 <body>
-    <div class="background-grid"></div>
-    <h1>404 Error</h1>
-    <div class="message">
-        Oops! Looks like you've hit a glitch in the matrix. <br> The page you're looking for doesn't exist or has gone offline.
+    <div class="vaporwave-bg">
+        <span>404 ERROR</span>
+        <span>NOT FOUND</span>
     </div>
-    <a href="/" class="link">Go back home</a>
-    <div class="datacoder">Datacoder V. 404</div>
+    
+    <div>
+        <h1>Oops! You've entered the void.</h1>
+        <p>404 - Page not found. Are you sure you're in the right dimension?</p>
+        <a href="/" class="cta-button">Return to Reality</a>
+    </div>
 </body>
 </html>
