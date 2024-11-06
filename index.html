@@ -3,75 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 Error</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(to right, #ff66b2, #ff33cc);
-            color: #ffffff;
-            text-align: center;
-            padding: 100px;
             margin: 0;
+            padding: 0;
+            background-color: #2b2d42;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
         }
 
         h1 {
-            font-size: 100px;
-            color: #00ffcc;
-            text-shadow: 0 0 10px rgba(0,255,255,0.5), 0 0 20px rgba(0,255,255,0.5);
-            margin-bottom: 20px;
+            font-size: 8rem;
+            color: #ff4c87;
+            text-shadow: 3px 3px 10px #ff0044, 0 0 25px #ff0044, 0 0 50px #ff0044;
+            animation: glitch 1s infinite linear;
         }
 
         p {
-            font-size: 20px;
-            color: #ff66cc;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            font-size: 2rem;
+            color: #a3b1c6;
+            text-shadow: 1px 1px 3px #ff0044, 0 0 25px #ff0044, 0 0 50px #ff0044;
         }
 
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 18px;
+        .btn {
+            background-color: #ff4c87;
             color: #fff;
-            background-color: #00ffcc;
-            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
             text-decoration: none;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #ff33cc;
-            transform: translateY(-5px);
-        }
-
-        .glitch {
-            color: #ff00ff;
-            font-size: 50px;
-            font-family: 'Courier New', Courier, monospace;
-            position: relative;
+            margin-top: 20px;
             display: inline-block;
-            animation: glitch 1.5s infinite linear alternate-reverse;
+            box-shadow: 0 0 15px #ff4c87;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff0066;
+            box-shadow: 0 0 25px #ff0066;
         }
 
         @keyframes glitch {
             0% {
-                transform: translate(-2px, 0);
+                text-shadow: 2px 2px 5px #ff0044, -2px -2px 5px #ff0044;
+                transform: translateX(1px);
             }
             50% {
-                transform: translate(2px, 0);
+                text-shadow: -2px -2px 5px #ff0044, 2px 2px 5px #ff0044;
+                transform: translateX(-1px);
             }
             100% {
-                transform: translate(-2px, 0);
+                text-shadow: 2px 2px 5px #ff0044, -2px -2px 5px #ff0044;
+                transform: translateX(1px);
             }
         }
 
+        .footer {
+            font-size: 1.2rem;
+            color: #ff9be8;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
     <h1>404</h1>
-    <p class="glitch">Oops, this page is lost in cyberspace!</p>
-    <p>Looks like you’ve wandered into the void. But don't worry, it's just a temporary glitch in the matrix.</p>
-    <p>Maybe try <a href="/" class="button">going back home</a>, or just refresh and pretend you never saw this!</p>
+    <p>Oops, you’ve found a black hole in the internet!</p>
+    <a href="/" class="btn">Take me home!</a>
+    <div class="footer">Error brought to you by your friendly coder from another dimension.</div>
 </body>
 </html>
