@@ -27,8 +27,8 @@
             animation: glitch 1s infinite linear alternate-reverse;
         }
         @keyframes glitch {
-            0% { transform: translate(-50%, -50%) skewX(-20deg); }
-            100% {  transform: translate(-50%, -50%) skewX(20deg); }
+            0% { transform: skewX(-20deg); }
+            100% {  transform: skewX(20deg); }
         }
         .button {
             background-color: #00FF00;
@@ -47,6 +47,7 @@
             top: 10px;
             left: 10px;
             font-size: 0.8rem;
+            font-family: 'Courier New', Courier, monospace;
             animation: cta 1.5s infinite alternate-reverse;
         }
         @keyframes cta {
@@ -58,7 +59,7 @@
 </head>
 <body>
 <main>
-    <h1>ERROR 404</h1>
+    <h1 onclick="window.location.href='/'">ERROR 404</h1>
     <p>Whoa, seems like you've ventured into a virtual void... this page doesn't exist in our data grid. </p>
     <a href="/" class="button">Return to Home</a>
     <div class="code">01000111 01100101 01101110 01100101 01110010</div>
