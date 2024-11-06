@@ -23,30 +23,16 @@
             position: relative;
         }
         h1 {
-            font-size: 80px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 5px;
-            animation: glitch-2 1s infinite;
+            animation: cta 1.5s infinite alternate-reverse;
         }
-        @keyframes glitch-2 {
-            0% { transform: skew(0deg) }
-            20% { transform: skew(-5deg) }
-            40% { transform: skew(5deg) }
-            60% { transform: skew(-5deg) }
-            80% { transform: skew(5deg); }
-            100% { transform: skew(0deg) }
-        }
-        p {
-            margin-top: 20px;
-            animation: glitch-3 1.5s infinite alternate-reverse;
-        }
-        @keyframes glitch-3 {
+        @keyframes cta {
             0% { transform: translateX(-5px) }
             50% { transform: translateX(5px) }
             100% { transform: translateX(-5px) }
-        }
-        
+        }   
         .button {
             background-color: #00FF00;
             color: #121212;
@@ -65,28 +51,18 @@
             left: 10px;
             font-size: 0.8rem;
             color: #00FF00;
-        }
-        .glitch {
-            position: absolute;
-            top: 50%;
-            left: 50%;
             transform: translate(-50%, -50%);
             animation: glitch 1s infinite linear alternate-reverse;
         }
         @keyframes glitch {
-            0% {
-                transform: translate(-50%, -50%) skewX(-20deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) skewX(20deg);
-            }
+            0% { transform: translate(-50%, -50%) skewX(-20deg); }
+            100% { transform: translate(-50%, -50%) skewX(20deg); }
         }
     </style>
 </head>
 <body>
 <main>
-    <div class="glitch">ERROR 404</div>
-    <h1>404</h1>
+    <h1>ERROR 404</h1>
     <p>Whoa, seems like you've ventured into a virtual void... this page doesn't exist in our data grid. </p>
     <a href="/" class="button">Return to Home</a>
     <div class="code">01000111 01100101 01101110 01100101 01110010</div>
