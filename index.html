@@ -3,86 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>404 Not Found</title>
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background: linear-gradient(135deg, #ff77ff, #00ffff);
             font-family: 'Courier New', Courier, monospace;
-            color: white;
-            height: 100vh;
+            background: linear-gradient(45deg, #ff00ff, #00bfff);
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
             text-align: center;
+            background-size: 200% 200%;
+            animation: gradientAnimation 4s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         h1 {
-            font-size: 6em;
-            letter-spacing: 5px;
-            animation: glitch 1.5s infinite;
-            text-shadow: 0 0 5px #ff77ff, 0 0 10px #00ffff, 0 0 20px #ff77ff;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
         }
 
         p {
-            font-size: 1.5em;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .code {
+            font-size: 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff00ff;
             margin-top: 20px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
-        .cta {
+        .back-btn {
+            display: inline-block;
             margin-top: 30px;
-            padding: 10px 30px;
-            font-size: 1.2em;
+            padding: 12px 30px;
             background-color: #ff00ff;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 5px;
+            color: white;
             text-decoration: none;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.6);
+            transition: background-color 0.3s ease;
         }
 
-        .cta:hover {
-            background-color: #ff77ff;
-            border-color: #ff00ff;
+        .back-btn:hover {
+            background-color: #00bfff;
         }
 
-        @keyframes glitch {
-            0% {
-                transform: translate(2px, 2px);
-                text-shadow: 2px 2px 3px #ff77ff, -2px -2px 3px #00ffff;
-            }
-            25% {
-                transform: translate(-2px, -2px);
-                text-shadow: -2px -2px 3px #ff77ff, 2px 2px 3px #00ffff;
-            }
-            50% {
-                transform: translate(2px, -2px);
-                text-shadow: 2px -2px 3px #ff77ff, -2px 2px 3px #00ffff;
-            }
-            75% {
-                transform: translate(-2px, 2px);
-                text-shadow: -2px 2px 3px #ff77ff, 2px -2px 3px #00ffff;
-            }
-            100% {
-                transform: translate(0, 0);
-                text-shadow: 0 0 5px #ff77ff, 0 0 10px #00ffff, 0 0 20px #ff77ff;
-            }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p>Oops! It looks like you’ve encountered an error while traveling through the matrix.</p>
-    <p>The page you're looking for is either lost in space, erased from existence, or just doesn’t exist at all. Don't worry, it happens to the best of us.</p>
-    <a href="/" class="cta">Return to Base</a>
+    <div>
+        <h1>404 - Code Not Found</h1>
+        <p>Oops! Looks like the page you’re trying to reach is lost in the source code...<br>Maybe it was a typo, maybe it's hiding in a loop, or maybe it's just part of the Matrix.</p>
+        
+        <div class="code">
+            <p>console.log('404: Page not found');</p>
+            <p>TypeError: Cannot read property 'home' of undefined</p>
+        </div>
+
+        <a href="/" class="back-btn">Return to Safety (Home)</a>
+        
+        <div class="footer">
+            <p>¯\_(ツ)_/¯ Don't worry, even coders mess up!</p>
+        </div>
+    </div>
 </body>
 </html>
