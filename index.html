@@ -23,16 +23,13 @@
             position: relative;
         }
         h1 {
-            font-weight: bold;
-            text-transform: uppercase;
             letter-spacing: 5px;
-            animation: cta 1.5s infinite alternate-reverse;
+            animation: glitch 1s infinite linear alternate-reverse;
         }
-        @keyframes cta {
-            0% { transform: translateX(-5px) }
-            50% { transform: translateX(5px) }
-            100% { transform: translateX(-5px) }
-        }   
+        @keyframes glitch {
+            0% { transform: translate(-50%, -50%) skewX(-20deg); }
+            100% {  transform: translate(-50%, -50%) skewX(20deg); }
+        }
         .button {
             background-color: #00FF00;
             color: #121212;
@@ -50,11 +47,12 @@
             top: 10px;
             left: 10px;
             font-size: 0.8rem;
-            animation: glitch 1s infinite linear alternate-reverse;
+            animation: cta 1.5s infinite alternate-reverse;
         }
-        @keyframes glitch {
-            0% { transform: translate(-50%, -50%) skewX(-20deg); }
-            100% { transform: translate(-50%, -50%) skewX(20deg); }
+        @keyframes cta {
+            0% { transform: translateX(-5px) }
+            50% { transform: translateX(5px) }
+            100% { transform: translateX(-5px) }
         }
     </style>
 </head>
