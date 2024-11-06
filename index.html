@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Single Element Link</title>
-  <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Yrsa" rel="stylesheet">
-  <style>
-.swipe-fill {
-  display: inline-block;
-  padding: 16px 28px;
-  border: 2px black solid;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  background: white;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out;
-  z-index: 1;
-  border-radius: 0px;
-}
-.swipe-fill:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #666;
-  transition: transform 0.25s ease-in-out;
-  z-index: -1;
-}
-.swipe-fill--up:before {
-  transform: translate3d(0, 100%, 0);
-}
-.swipe-fill--down:before {
-  transform: translate3d(0, -100%, 0);
-}
-.swipe-fill--left:before {
-  transform: translate3d(-100%, 0, 0);
-}
-.swipe-fill--right:before {
-  transform: translate3d(100%, 0, 0);
-}
-.swipe-fill:hover {
-  color: white;
-  border: 2px black solid;
-}
-.swipe-fill:hover:before {
-  transform: translate3d(0, 0, 0);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(to right, #ff66b2, #ff33cc);
+            color: #ffffff;
+            text-align: center;
+            padding: 100px;
+            margin: 0;
+        }
 
-body {
-  font-family: sans-serif;
-  max-width: 95%;
-  margin: 0 auto;
-  padding: 30px;
-  font-family: "Maven Pro", sans-serif;
-  text-align: center;
-}
-  </style>
+        h1 {
+            font-size: 100px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px rgba(0,255,255,0.5), 0 0 20px rgba(0,255,255,0.5);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #ff66cc;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #00ffcc;
+            border: none;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff33cc;
+            transform: translateY(-5px);
+        }
+
+        .glitch {
+            color: #ff00ff;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            display: inline-block;
+            animation: glitch 1.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(-2px, 0);
+            }
+            50% {
+                transform: translate(2px, 0);
+            }
+            100% {
+                transform: translate(-2px, 0);
+            }
+        }
+
+    </style>
 </head>
 <body>
-<div class="button-container">
-  <h2>Swipe Fill</h2>
-  <a href="#" class="swipe-fill swipe-fill--up">Swipe Fill Up</a>
-  <a href="#" class="swipe-fill swipe-fill--down">Swipe Fill Down</a>
-  <a href="#" class="swipe-fill swipe-fill--left">Swipe Fill Left</a>
-  <a href="#" class="swipe-fill swipe-fill--right">Swipe Fill Right</a>
-</div>
+    <h1>404</h1>
+    <p class="glitch">Oops, this page is lost in cyberspace!</p>
+    <p>Looks like you’ve wandered into the void. But don't worry, it's just a temporary glitch in the matrix.</p>
+    <p>Maybe try <a href="/" class="button">going back home</a>, or just refresh and pretend you never saw this!</p>
 </body>
 </html>
