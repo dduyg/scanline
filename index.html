@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works Page</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    /* Tag Filter Column (Left) */
+    .sidebar {
+      background-color: #f0f0f0;
+      padding: 20px;
+      width: 200px;
+    }
+
+    .tags {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tags li {
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #888;
+      cursor: pointer;
+    }
+
+    /* Content Area (Main Column) */
+    .main-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-entry {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .work-entry .date {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .work-entry .title {
+      font-size: 1.1em;
+      margin: 5px 0;
+    }
+
+    .work-entry .roles {
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        background-color: #f9f9f9;
+        padding: 10px;
+      }
+
+      .main-content {
+        padding: 10px;
+      }
+
+      .tags {
+        display: flex;
+        overflow-x: auto;
+      }
+
+      .tags li {
+        margin-right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar for Tags -->
+  <div class="sidebar">
+    <ul class="tags">
+      <li>All</li>
+      <li>作詞</li>
+      <li>作曲</li>
+      <li>編曲</li>
+      <li>プロデュース</li>
+      <li>ボーカルディレクション</li>
+      <li>BGM</li>
+      <li>劇伴</li>
+      <li>Remix</li>
+    </ul>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <!-- Work Entry Example -->
+    <div class="work-entry">
+      <div class="date">2024.08</div>
+      <div class="title">白迎 - Carat.</div>
+      <div class="roles">作詞 / 作曲 / ボーカルディレクション</div>
+    </div>
+
+    <div class="work-entry">
+      <div class="date">2024.06</div>
+      <div class="title">WaMi - ANGeLiC GiRL</div>
+      <div class="roles">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
+    </div>
+
+    <div class="work-entry">
+      <div class="date">2024.06</div>
+      <div class="title">楽園管理ホラーADV トゥエデン</div>
+      <div class="roles">BGM / プロデュース</div>
+    </div>
+
+    <!-- Repeat other work entries as needed -->
+  </div>
+
+</body>
+</html>
