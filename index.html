@@ -3,78 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>404 - Not Found</title>
     <style>
         body {
-            background-color: #2e1a47;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            padding: 100px;
             margin: 0;
-            background-image: url('https://cdn.pixabay.com/photo/2019/12/16/15/39/abstract-4703606_960_720.jpg');
-            background-size: cover;
-            background-position: center;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff00cc, #33ccff);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
         }
 
         h1 {
             font-size: 80px;
-            color: #ff33cc;
-            text-shadow: 0 0 5px #ff33cc, 0 0 10px #ff33cc, 0 0 20px #ff33cc;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glitch 1s infinite;
         }
 
         p {
-            font-size: 20px;
-            color: #b3b3ff;
-            margin: 20px 0;
-            text-shadow: 0 0 5px #b3b3ff, 0 0 10px #b3b3ff;
+            font-size: 24px;
+            margin-top: 10px;
+            animation: fadeIn 2s ease;
         }
 
-        a {
-            color: #ff33cc;
-            text-decoration: none;
-            font-size: 22px;
-            border: 2px solid #ff33cc;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        a:hover {
-            background-color: #ff33cc;
-            color: #2e1a47;
-        }
-
-        .code-box {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            margin-top: 40px;
-            border-radius: 10px;
-        }
-
-        .code-box pre {
+        .message {
+            font-size: 18px;
             font-family: 'Courier New', Courier, monospace;
-            color: #ff66cc;
-            font-size: 16px;
-            line-height: 1.5;
+            margin-top: 20px;
+            color: #ffcc00;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
         }
 
+        .button {
+            padding: 15px 30px;
+            margin-top: 40px;
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: skew(0deg);
+                text-shadow: none;
+            }
+            20% {
+                transform: skew(-5deg);
+                text-shadow: 2px 2px 10px rgba(255, 0, 255, 0.5);
+            }
+            40% {
+                transform: skew(5deg);
+                text-shadow: -2px -2px 10px rgba(0, 255, 255, 0.5);
+            }
+            60% {
+                transform: skew(-5deg);
+                text-shadow: 2px 2px 10px rgba(255, 0, 255, 0.5);
+            }
+            80% {
+                transform: skew(5deg);
+                text-shadow: -2px -2px 10px rgba(0, 255, 255, 0.5);
+            }
+            100% {
+                transform: skew(0deg);
+                text-shadow: none;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Oops, looks like you've stumbled into a <span style="font-weight:bold;">void</span> that even the debugger can't fix!</p>
-    <p>Maybe you need to check the URL, or perhaps...<br>the page was <span style="font-style:italic;">just too cool for this dimension</span>.</p>
-    
-    <div class="code-box">
-        <pre>
-        ERROR 404: CODE NOT FOUND
-        SYSTEM: You broke the loop!
-        REBOOT IN PROGRESS...
-        </pre>
-    </div>
-    
-    <p>Don't worry though, you can always go back and try again:</p>
-    <a href="/">Go Back Home</a>
+
+    <h1>404</h1>
+    <p>Whoops, looks like you're in the wrong dimension!</p>
+    <div class="message">We couldn't find the page you were looking for. It's out there somewhere, lost in the digital cosmos...</div>
+    <a href="/" class="button">Return to the Home Page</a>
+
 </body>
 </html>
