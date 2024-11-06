@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works List</title>
+    <style>
+      /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e7ec;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sidebar styles */
+.tags {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.tags ul {
+    list-style: none;
+}
+
+.tags li {
+    margin-bottom: 10px;
+}
+
+.tags a {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+}
+
+.tags a:hover {
+    color: #000;
+}
+
+/* Main content styles */
+.works {
+    flex: 1;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.date {
+    font-weight: bold;
+    color: #444;
+}
+
+.title {
+    font-size: 1.1em;
+    color: #333;
+    margin-top: 5px;
+}
+
+.details {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .tags {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .works {
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar for filters -->
+        <aside class="tags">
+            <ul>
+                <li><a href="#">All</a></li>
+                <li><a href="#">作詞</a></li>
+                <li><a href="#">作曲</a></li>
+                <li><a href="#">編曲</a></li>
+                <li><a href="#">プロデュース</a></li>
+                <li><a href="#">ボーカルディレクション</a></li>
+                <li><a href="#">BGM</a></li>
+                <li><a href="#">劇伴</a></li>
+                <li><a href="#">Remix</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main content for works list -->
+        <main class="works">
+            <div class="work-item">
+                <div class="date">2024.08</div>
+                <div class="title">白迄 - Carat.</div>
+                <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
+            </div>
+            <div class="work-item">
+                <div class="date">2024.06</div>
+                <div class="title">WaMi - ANGeLiC GiRL</div>
+                <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
+            </div>
+            <!-- Add more work items following the same structure -->
+        </main>
+    </div>
+</body>
+</html>
