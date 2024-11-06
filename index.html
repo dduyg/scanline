@@ -3,109 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 Not Found</title>
+    <title>Error 404: Data Not Found</title>
     <style>
         body {
-            background: linear-gradient(45deg, #ff77ff, #6a00ff, #00b7ff, #00ff77);
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite;
             font-family: 'Courier New', Courier, monospace;
-            color: white;
+            background-color: #121212;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             overflow: hidden;
+            flex-direction: column;
+            text-align: center;
         }
 
         h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
+            font-size: 5rem;
             letter-spacing: 5px;
-            text-align: center;
-            z-index: 2;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+            text-transform: uppercase;
+            animation: glitch 1s infinite linear;
+            position: relative;
+        }
+
+        h1::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #ff0055;
+            animation: glitch-2 1s infinite linear;
+            clip-path: inset(0 50% 0 0);
         }
 
         p {
             font-size: 1.5rem;
-            text-align: center;
-            z-index: 2;
+            margin-top: 20px;
+            animation: glitch 1.5s infinite alternate-reverse;
         }
 
-        .glitch {
-            position: relative;
-            display: inline-block;
-            color: white;
-            font-size: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            animation: glitch-animation 2s infinite linear alternate-reverse;
-        }
-
-        .glitch:before {
-            content: attr(data-text);
-            position: absolute;
-            left: 0;
-            top: 0;
-            text-shadow: -2px 0 red, 2px 0 blue, 0 2px green, 0 -2px yellow;
-            clip: rect(0, 900px, 0, 0);
-            animation: glitch-before 2s infinite linear alternate-reverse;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes glitch-animation {
-            0% { transform: translate(0); }
-            20% { transform: translate(-5px, -5px); }
-            40% { transform: translate(5px, 5px); }
-            60% { transform: translate(-5px, 5px); }
-            80% { transform: translate(5px, -5px); }
-            100% { transform: translate(0); }
-        }
-
-        @keyframes glitch-before {
-            0% { clip: rect(3px, 9999px, 0, 0); }
-            20% { clip: rect(1px, 9999px, 0, 0); }
-            40% { clip: rect(2px, 9999px, 0, 0); }
-            60% { clip: rect(4px, 9999px, 0, 0); }
-            80% { clip: rect(5px, 9999px, 0, 0); }
-            100% { clip: rect(3px, 9999px, 0, 0); }
-        }
-
-        .back-home {
+        .btn {
             margin-top: 30px;
-            text-align: center;
-            background-color: #ff00ff;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 25px;
+            background-color: #00ff00;
+            border: none;
             font-size: 1.2rem;
-            color: black;
-            text-decoration: none;
-            border: 2px solid black;
-            transition: all 0.3s ease;
+            color: #121212;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            border-radius: 5px;
+            text-transform: uppercase;
         }
 
-        .back-home:hover {
-            background-color: #6a00ff;
-            color: white;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translateX(-5px);
+                text-shadow: -2px 0px 2px #ff0055, 2px 0px 2px #00ff00;
+            }
+            50% {
+                transform: translateX(5px);
+                text-shadow: -2px 0px 2px #00ff00, 2px 0px 2px #ff0055;
+            }
+            100% {
+                transform: translateX(-5px);
+                text-shadow: -2px 0px 2px #ff0055, 2px 0px 2px #00ff00;
+            }
+        }
+
+        @keyframes glitch-2 {
+            0% {
+                clip-path: inset(0 0 0 50%);
+            }
+            100% {
+                clip-path: inset(0 50% 0 0);
+            }
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1 class="glitch" data-text="404">404</h1>
-        <p>Oops, we lost this page in the void of cyberspace!</p>
-        <a href="/" class="back-home">Go back to home</a>
-    </div>
+
+    <h1>404</h1>
+    <p>Oops, looks like your data just went rogue.<br> The page you're looking for doesn't exist in this dimension!</p>
+    <button class="btn" onclick="window.history.back()">Go Back</button>
+
+    <script>
+        // Optional: Add any additional cyberpunk effects or animation with JS if needed.
+    </script>
+
 </body>
 </html>
