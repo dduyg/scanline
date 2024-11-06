@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Not Found</title>
+    <title>404 - Page Not Found</title>
     <style>
-        /* General reset */
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(45deg, #ff0080, #7928ca);
+            background: linear-gradient(135deg, #ff77ff, #00ffff);
+            font-family: 'Courier New', Courier, monospace;
             color: white;
             height: 100vh;
             display: flex;
@@ -22,92 +22,67 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            overflow: hidden;
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.7);
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
         }
 
         h1 {
-            font-size: 5em;
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
-            text-shadow: 0 0 5px rgba(0,255,255,0.8), 0 0 10px rgba(0,255,255,0.6);
+            font-size: 6em;
+            letter-spacing: 5px;
+            animation: glitch 1.5s infinite;
+            text-shadow: 0 0 5px #ff77ff, 0 0 10px #00ffff, 0 0 20px #ff77ff;
         }
 
-        h2 {
+        p {
             font-size: 1.5em;
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
-            font-style: italic;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
-        .message {
-            font-size: 1.2em;
+        .cta {
             margin-top: 30px;
-            font-family: 'Courier New', monospace;
-            color: #FF79C6;
-        }
-
-        .button {
-            background: #00ff99;
-            color: black;
-            font-size: 1.5em;
             padding: 10px 30px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-transform: uppercase;
+            font-size: 1.2em;
+            background-color: #ff00ff;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 5px;
             text-decoration: none;
-            box-shadow: 0 0 20px rgba(0,255,255,0.5);
+            letter-spacing: 2px;
             transition: all 0.3s ease;
         }
 
-        .button:hover {
-            background: #ff0080;
-            box-shadow: 0 0 30px rgba(0,255,255,0.7);
+        .cta:hover {
+            background-color: #ff77ff;
+            border-color: #ff00ff;
         }
 
-        .footer {
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .footer a {
-            color: #ff79c6;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #00ff99;
+        @keyframes glitch {
+            0% {
+                transform: translate(2px, 2px);
+                text-shadow: 2px 2px 3px #ff77ff, -2px -2px 3px #00ffff;
+            }
+            25% {
+                transform: translate(-2px, -2px);
+                text-shadow: -2px -2px 3px #ff77ff, 2px 2px 3px #00ffff;
+            }
+            50% {
+                transform: translate(2px, -2px);
+                text-shadow: 2px -2px 3px #ff77ff, -2px 2px 3px #00ffff;
+            }
+            75% {
+                transform: translate(-2px, 2px);
+                text-shadow: -2px 2px 3px #ff77ff, 2px -2px 3px #00ffff;
+            }
+            100% {
+                transform: translate(0, 0);
+                text-shadow: 0 0 5px #ff77ff, 0 0 10px #00ffff, 0 0 20px #ff77ff;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>404</h1>
-        <h2>Oops! Looks like you’ve traveled to the wrong dimension.</h2>
-        <div class="message">This page is lost in the code void. It's time to debug your journey!</div>
-        <a href="/" class="button">Return to the Matrix</a>
-        <div class="footer">
-            <p>Powered by <a href="https://www.github.com" target="_blank">Your GitHub Account</a></p>
-        </div>
-    </div>
+    <h1>404</h1>
+    <p>Oops! It looks like you’ve encountered an error while traveling through the matrix.</p>
+    <p>The page you're looking for is either lost in space, erased from existence, or just doesn’t exist at all. Don't worry, it happens to the best of us.</p>
+    <a href="/" class="cta">Return to Base</a>
 </body>
 </html>
