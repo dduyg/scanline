@@ -3,89 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Data Corruption Detected</title>
+    <title>404 Not Found</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
+            background: #121212;
+            color: #00FF00;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #00FF00;
+            overflow: hidden;
+        }
+        .container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
             text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
+            position: relative;
         }
         h1 {
-            font-size: 8rem;
+            font-size: 6rem;
             margin: 0;
-            text-transform: uppercase;
-            color: #ff007f;
-            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+            text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
         }
         h2 {
             font-size: 2rem;
-            color: #00FF00;
-            margin-top: -20px;
-            font-weight: normal;
+            color: #FF6347;
+            text-shadow: 0 0 10px #FF6347;
         }
         .message {
-            font-size: 1.2rem;
-            color: #00FF00;
-            margin: 30px auto;
-            line-height: 1.5;
-            max-width: 600px;
+            font-size: 1.5rem;
+            color: #FF4500;
+            margin: 20px;
         }
         .button {
-            padding: 15px 30px;
-            background-color: #ff007f;
+            background-color: #00FF00;
+            color: #121212;
             border: none;
-            color: #fff;
+            padding: 10px 20px;
             font-size: 1.2rem;
-            cursor: pointer;
             text-transform: uppercase;
-            border-radius: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
             transition: background-color 0.3s;
         }
         .button:hover {
-            background-color: #ff3399;
+            background-color: #32CD32;
+        }
+        .code {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: #00FF00;
         }
         .glitch {
-            font-family: 'Courier New', Courier, monospace;
-            color: #ff007f;
-            position: relative;
-            display: inline-block;
-        }
-        .glitch:before {
-            content: attr(data-text);
             position: absolute;
-            left: 0;
-            top: 0;
-            color: #00FF00;
-            z-index: -1;
-            animation: glitch 1.5s infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: glitch 1s infinite linear alternate-reverse;
         }
         @keyframes glitch {
-            0% { transform: translate(2px, 2px); }
-            25% { transform: translate(-2px, -2px); }
-            50% { transform: translate(2px, 2px); }
-            75% { transform: translate(-2px, -2px); }
-            100% { transform: translate(2px, 2px); }
+            0% {
+                transform: translate(-50%, -50%) skewX(-20deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) skewX(20deg);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="glitch" data-text="404">404</h1>
-        <h2>Data Corruption Detected</h2>
-        <p class="message">Oops! It seems like you've encountered an anomaly in the system. The page you requested is lost in the digital void. Maybe it got caught in a time loop or... maybe it's just hiding from you. Either way, don't panic. The network has your back.</p>
-        <button class="button" onclick="window.location.href='/'">Return to Safe Zone</button>
+
+<div class="container">
+    <div class="glitch">ERROR 404</div>
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <div class="message">
+        Whoa, seems like you've ventured into a virtual void... this page doesn't exist in our data grid.
     </div>
+    <a href="/" class="button">Return to Home</a>
+    <div class="code">01000111 01100101 01101110 01100101 01110010</div>
+</div>
+
 </body>
 </html>
