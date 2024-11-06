@@ -3,88 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 Error - Not Found</title>
+    <title>404 Error - Data Corruption Detected</title>
     <style>
         body {
-            background-color: #121212;
-            font-family: 'Courier New', Courier, monospace;
-            color: #00ff00;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #121212;
+            color: #00FF00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             overflow: hidden;
+            text-align: center;
         }
-
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
         h1 {
-            font-size: 72px;
-            margin-top: 150px;
-            animation: glitch 1s infinite alternate;
+            font-size: 8rem;
+            margin: 0;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
         }
-
+        h2 {
+            font-size: 2rem;
+            color: #00FF00;
+            margin-top: -20px;
+            font-weight: normal;
+        }
         .message {
-            font-size: 24px;
-            color: #ff00ff;
-            margin-top: 20px;
-            animation: flicker 3s infinite alternate;
+            font-size: 1.2rem;
+            color: #00FF00;
+            margin: 30px auto;
+            line-height: 1.5;
+            max-width: 600px;
         }
-
-        .cta {
-            font-size: 18px;
-            color: #00bcd4;
-            margin-top: 30px;
+        .button {
+            padding: 15px 30px;
+            background-color: #ff007f;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
             cursor: pointer;
-            text-decoration: underline;
+            text-transform: uppercase;
+            border-radius: 10px;
+            transition: background-color 0.3s;
         }
-
-        .cta:hover {
-            color: #ff4081;
+        .button:hover {
+            background-color: #ff3399;
         }
-
+        .glitch {
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff007f;
+            position: relative;
+            display: inline-block;
+        }
+        .glitch:before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #00FF00;
+            z-index: -1;
+            animation: glitch 1.5s infinite;
+        }
         @keyframes glitch {
-            0% {
-                text-shadow: 2px 0 red, -2px 0 blue;
-                transform: translate3d(0, 0, 0);
-            }
-            20% {
-                text-shadow: -2px 0 red, 2px 0 blue;
-                transform: translate3d(-3px, 0, 0);
-            }
-            40% {
-                text-shadow: 1px 0 red, -1px 0 blue;
-                transform: translate3d(3px, 0, 0);
-            }
-            60% {
-                text-shadow: -1px 0 red, 1px 0 blue;
-                transform: translate3d(-5px, 0, 0);
-            }
-            80% {
-                text-shadow: 2px 0 red, -2px 0 blue;
-                transform: translate3d(5px, 0, 0);
-            }
-        }
-
-        @keyframes flicker {
-            0% {
-                opacity: 0.3;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.3;
-            }
+            0% { transform: translate(2px, 2px); }
+            25% { transform: translate(-2px, -2px); }
+            50% { transform: translate(2px, 2px); }
+            75% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, 2px); }
         }
     </style>
 </head>
 <body>
-    <h1>404 - Not Found</h1>
-    <div class="message">
-        System Error: Your query has been lost in cyberspace.<br>
-        Please try again, or reboot your brain.<br><br>
-        <span class="cta" onclick="window.location.href='/'">Reboot Home</span>
+    <div class="container">
+        <h1 class="glitch" data-text="404">404</h1>
+        <h2>Data Corruption Detected</h2>
+        <p class="message">Oops! It seems like you've encountered an anomaly in the system. The page you requested is lost in the digital void. Maybe it got caught in a time loop or... maybe it's just hiding from you. Either way, don't panic. The network has your back.</p>
+        <button class="button" onclick="window.location.href='/'">Return to Safe Zone</button>
     </div>
 </body>
 </html>
