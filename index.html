@@ -1,132 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Works List</title>
-    <style>
-      /* Basic Reset */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works Page</title>
+  <style>
+      /* Basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0e7ec;
-    color: #333;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #3a5a72; /* Match background color from screenshot */
+  display: flex;
+  flex-direction: row;
 }
 
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+/* Sidebar styling for desktop */
+.sidebar {
+  min-width: 200px;
+  padding: 20px;
 }
 
-/* Sidebar styles */
-.tags {
-    width: 200px;
-    margin-right: 20px;
+.filter-tags {
+  list-style: none;
 }
 
-.tags ul {
-    list-style: none;
+.filter-tags li {
+  padding: 10px 0;
+  font-weight: bold;
+  color: #ccc;
 }
 
-.tags li {
-    margin-bottom: 10px;
+.filter-tags li:hover {
+  color: #fff;
+  cursor: pointer;
 }
 
-.tags a {
-    text-decoration: none;
-    color: #666;
-    font-weight: bold;
+/* Main content styling */
+.content {
+  padding: 20px;
+  width: 100%;
 }
 
-.tags a:hover {
-    color: #000;
-}
-
-/* Main content styles */
-.works {
-    flex: 1;
-}
-
-.work-item {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
+.work-entry {
+  display: flex;
+  align-items: baseline;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .date {
-    font-weight: bold;
-    color: #444;
+  min-width: 80px;
+  font-weight: bold;
+  color: #e3e3e3;
 }
 
 .title {
-    font-size: 1.1em;
-    color: #333;
-    margin-top: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-right: auto;
 }
 
-.details {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 5px;
+.roles {
+  font-size: 0.9em;
+  color: #b0c4de;
 }
 
-/* Responsive layout for mobile */
+/* Responsive styling for mobile */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-    
-    .tags {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    .works {
-        width: 100%;
-    }
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    order: 1;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .content {
+    order: 2;
+    padding: 10px;
+  }
+
+  .work-entry {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .date, .title, .roles {
+    padding: 5px 0;
+  }
 }
-    </style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar for filters -->
-        <aside class="tags">
-            <ul>
-                <li><a href="#">All</a></li>
-                <li><a href="#">作詞</a></li>
-                <li><a href="#">作曲</a></li>
-                <li><a href="#">編曲</a></li>
-                <li><a href="#">プロデュース</a></li>
-                <li><a href="#">ボーカルディレクション</a></li>
-                <li><a href="#">BGM</a></li>
-                <li><a href="#">劇伴</a></li>
-                <li><a href="#">Remix</a></li>
-            </ul>
-        </aside>
 
-        <!-- Main content for works list -->
-        <main class="works">
-            <div class="work-item">
-                <div class="date">2024.08</div>
-                <div class="title">白迄 - Carat.</div>
-                <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
-            </div>
-            <div class="work-item">
-                <div class="date">2024.06</div>
-                <div class="title">WaMi - ANGeLiC GiRL</div>
-                <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
-            </div>
-            <!-- Add more work items following the same structure -->
-        </main>
+  <!-- Sidebar for filters (tags) -->
+  <aside class="sidebar">
+    <ul class="filter-tags">
+      <li>All</li>
+      <li>作詞</li>
+      <li>作曲</li>
+      <li>編曲</li>
+      <li>プロデュース</li>
+      <li>ボーカルディレクション</li>
+      <li>BGM</li>
+      <li>劇伴</li>
+      <li>Remix</li>
+    </ul>
+  </aside>
+
+  <!-- Main content section -->
+  <main class="content">
+    <!-- Each entry in the list -->
+    <div class="work-entry">
+      <div class="date">2024.08</div>
+      <div class="title">白迄 - Carat.</div>
+      <div class="roles">作詞 / 作曲 / ボーカルディレクション</div>
     </div>
+
+    <div class="work-entry">
+      <div class="date">2024.06</div>
+      <div class="title">WaMi - ANGELiC GiRL</div>
+      <div class="roles">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
+    </div>
+
+    <!-- Add additional work entries in the same format -->
+    <!-- ... -->
+
+  </main>
+
 </body>
 </html>
