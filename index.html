@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>404 Error</title>
+    <style>
+        /* Basic reset and body styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(45deg, #ff0077, #33ccff);
+            color: #fff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Glitch effect animation */
+        @keyframes glitch {
+            0% { transform: translateX(2px); }
+            20% { transform: translateX(-2px); }
+            40% { transform: translateX(2px); }
+            60% { transform: translateX(-2px); }
+            80% { transform: translateX(2px); }
+            100% { transform: translateX(0); }
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ff0055;
+            letter-spacing: 5px;
+            animation: glitch 1s infinite;
+            position: relative;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #ffcc00;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #ffcc00;
+            border: 2px solid #ffcc00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .link:hover {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.6);
+        }
+
+        .background-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+
+        .datacoder {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1rem;
+            color: #00ff99;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glitch 2s infinite alternate-reverse;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-grid"></div>
+    <h1>404 Error</h1>
+    <div class="message">
+        Oops! Looks like you've hit a glitch in the matrix. <br> The page you're looking for doesn't exist or has gone offline.
+    </div>
+    <a href="/" class="link">Go back home</a>
+    <div class="datacoder">Datacoder V. 404</div>
+</body>
+</html>
