@@ -4,106 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>404 Error - Not Found</title>
+    <title>404 Not Found</title>
     <style>
-        /* Global reset */
-        body, h1, p {
-            margin: 0;
-            padding: 0;
+        body {
+            background: linear-gradient(45deg, #ff77ff, #6a00ff, #00b7ff, #00ff77);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             font-family: 'Courier New', Courier, monospace;
             color: white;
-        }
-
-        body {
-            background: linear-gradient(135deg, #ff77ff, #ff00ff);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            text-align: center;
+            margin: 0;
             overflow: hidden;
-            position: relative;
-        }
-
-        .vaporwave-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            font-size: 100px;
-            color: rgba(255, 255, 255, 0.1);
-            letter-spacing: 5px;
-        }
-
-        .vaporwave-bg span {
-            display: block;
-            animation: glitch 1.5s infinite linear alternate-reverse;
         }
 
         h1 {
             font-size: 4rem;
             text-transform: uppercase;
             letter-spacing: 5px;
-            animation: neon 1.5s ease-in-out infinite alternate;
+            text-align: center;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #ffcc00;
-            animation: glitch-text 1.5s infinite linear alternate;
+            font-size: 1.5rem;
+            text-align: center;
+            z-index: 2;
         }
 
-        .cta-button {
+        .glitch {
+            position: relative;
             display: inline-block;
-            background-color: #ff00ff;
             color: white;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            margin-top: 30px;
-            border-radius: 5px;
-            text-decoration: none;
+            font-size: 4rem;
             text-transform: uppercase;
-            transition: 0.3s;
+            letter-spacing: 5px;
+            animation: glitch-animation 2s infinite linear alternate-reverse;
         }
 
-        .cta-button:hover {
-            background-color: #ff77ff;
-            transform: scale(1.1);
+        .glitch:before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-shadow: -2px 0 red, 2px 0 blue, 0 2px green, 0 -2px yellow;
+            clip: rect(0, 900px, 0, 0);
+            animation: glitch-before 2s infinite linear alternate-reverse;
         }
 
-        /* Animation Effects */
-        @keyframes neon {
-            0% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
-            50% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff; }
-            100% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff; }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes glitch {
-            0% { transform: translate(-2px, 0) scale(1); }
-            25% { transform: translate(2px, -2px) scale(1.1); }
-            50% { transform: translate(-2px, 2px) scale(1.05); }
-            75% { transform: translate(2px, 0) scale(1.1); }
-            100% { transform: translate(0, 0) scale(1); }
+        @keyframes glitch-animation {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, -5px); }
+            40% { transform: translate(5px, 5px); }
+            60% { transform: translate(-5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
         }
 
-        @keyframes glitch-text {
-            0% { opacity: 0.8; text-shadow: 2px 0 red, -2px 0 blue; }
-            100% { opacity: 1; text-shadow: none; }
+        @keyframes glitch-before {
+            0% { clip: rect(3px, 9999px, 0, 0); }
+            20% { clip: rect(1px, 9999px, 0, 0); }
+            40% { clip: rect(2px, 9999px, 0, 0); }
+            60% { clip: rect(4px, 9999px, 0, 0); }
+            80% { clip: rect(5px, 9999px, 0, 0); }
+            100% { clip: rect(3px, 9999px, 0, 0); }
+        }
+
+        .back-home {
+            margin-top: 30px;
+            text-align: center;
+            background-color: #ff00ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            color: black;
+            text-decoration: none;
+            border: 2px solid black;
+            transition: all 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: #6a00ff;
+            color: white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
 <body>
-    <div class="vaporwave-bg">
-        <span>404 ERROR</span>
-        <span>NOT FOUND</span>
-    </div>
-    
     <div>
-        <h1>Oops! You've entered the void.</h1>
-        <p>404 - Page not found. Are you sure you're in the right dimension?</p>
-        <a href="/" class="cta-button">Return to Reality</a>
+        <h1 class="glitch" data-text="404">404</h1>
+        <p>Oops, we lost this page in the void of cyberspace!</p>
+        <a href="/" class="back-home">Go back to home</a>
     </div>
 </body>
 </html>
