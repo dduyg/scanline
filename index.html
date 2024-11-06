@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Works</title>
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Filter Sidebar for Desktop */
+.filter-section {
+  width: 200px;
+  background-color: #f5f7fa;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.filter-section ul {
+  list-style: none;
+}
+
+.filter-section li {
+  padding: 10px 0;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.filter-section .active {
+  font-weight: bold;
+}
+
+/* Main Works Section */
+.works-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.work-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.work-item .date {
+  font-weight: bold;
+  color: #666;
+}
+
+.work-item .title {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.work-item .details {
+  color: #999;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  /* Move Filter Section to the Top */
+  .filter-section {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Work Items in Full Width */
+  .works-section {
+    padding: 10px;
+  }
+
+  .work-item {
+    padding: 15px 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Filter Sidebar (Desktop) / Filter Header (Mobile) -->
+    <div class="filter-section">
+      <ul>
+        <li class="active">All</li>
+        <li>作詞</li>
+        <li>作曲</li>
+        <li>編曲</li>
+        <li>プロデュース</li>
+        <li>ボーカルディレクション</li>
+        <li>BGM</li>
+        <li>劇伴</li>
+        <li>Remix</li>
+      </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="works-section">
+      <div class="work-item">
+        <div class="date">2024.08</div>
+        <div class="title">白迄 - Carat.</div>
+        <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
+      </div>
+      <div class="work-item">
+        <div class="date">2024.06</div>
+        <div class="title">WaMi - ANGeLiC GiRL</div>
+        <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
+      </div>
+      <div class="work-item">
+        <div class="date">2024.06</div>
+        <div class="title">楽園管理ホラーADV トワデン</div>
+        <div class="details">BGM / プロデュース</div>
+      </div>
+      <!-- Additional work items can be added here in the same structure -->
+    </div>
+  </div>
+</body>
+</html>
