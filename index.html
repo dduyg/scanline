@@ -3,95 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 - Page Not Found</title>
     <style>
         body {
+            background-color: #2e1a47;
+            color: #fff;
             font-family: 'Courier New', Courier, monospace;
-            background: linear-gradient(45deg, #ff00ff, #00bfff);
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
             text-align: center;
-            background-size: 200% 200%;
-            animation: gradientAnimation 4s ease infinite;
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            padding: 100px;
+            margin: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2019/12/16/15/39/abstract-4703606_960_720.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+            font-size: 80px;
+            color: #ff33cc;
+            text-shadow: 0 0 5px #ff33cc, 0 0 10px #ff33cc, 0 0 20px #ff33cc;
         }
 
         p {
-            font-size: 1.2rem;
-            color: #e0e0e0;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            color: #b3b3ff;
+            margin: 20px 0;
+            text-shadow: 0 0 5px #b3b3ff, 0 0 10px #b3b3ff;
         }
 
-        .code {
-            font-size: 1.5rem;
-            font-family: 'Courier New', Courier, monospace;
-            color: #ff00ff;
-            margin-top: 20px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background-color: #ff00ff;
-            color: white;
+        a {
+            color: #ff33cc;
             text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.6);
-            transition: background-color 0.3s ease;
+            font-size: 22px;
+            border: 2px solid #ff33cc;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
 
-        .back-btn:hover {
-            background-color: #00bfff;
+        a:hover {
+            background-color: #ff33cc;
+            color: #2e1a47;
         }
 
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
+        .code-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 10px;
         }
+
+        .code-box pre {
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff66cc;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
     </style>
 </head>
 <body>
-    <div>
-        <h1>404 - Code Not Found</h1>
-        <p>Oops! Looks like the page you’re trying to reach is lost in the source code...<br>Maybe it was a typo, maybe it's hiding in a loop, or maybe it's just part of the Matrix.</p>
-        
-        <div class="code">
-            <p>console.log('404: Page not found');</p>
-            <p>TypeError: Cannot read property 'home' of undefined</p>
-        </div>
-
-        <a href="/" class="back-btn">Return to Safety (Home)</a>
-        
-        <div class="footer">
-            <p>¯\_(ツ)_/¯ Don't worry, even coders mess up!</p>
-        </div>
+    <h1>404 - Page Not Found</h1>
+    <p>Oops, looks like you've stumbled into a <span style="font-weight:bold;">void</span> that even the debugger can't fix!</p>
+    <p>Maybe you need to check the URL, or perhaps...<br>the page was <span style="font-style:italic;">just too cool for this dimension</span>.</p>
+    
+    <div class="code-box">
+        <pre>
+        ERROR 404: CODE NOT FOUND
+        SYSTEM: You broke the loop!
+        REBOOT IN PROGRESS...
+        </pre>
     </div>
+    
+    <p>Don't worry though, you can always go back and try again:</p>
+    <a href="/">Go Back Home</a>
 </body>
 </html>
