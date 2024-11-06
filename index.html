@@ -3,91 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>404 - Data Corruption Detected</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background: #121212;
-            color: #00FF00;
+            font-family: 'Courier New', monospace;
+            background-color: #121212;
+            color: #00ffcc;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-        }
-        .container {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
+            overflow: hidden;
+        }
+        .container {
             position: relative;
+            z-index: 1;
         }
         h1 {
-            font-size: 6rem;
+            font-size: 72px;
             margin: 0;
-            text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
         }
-        h2 {
-            font-size: 2rem;
-            color: #FF6347;
-            text-shadow: 0 0 10px #FF6347;
+        p {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
         }
-        .message {
-            font-size: 1.5rem;
-            color: #FF4500;
-            margin: 20px;
+        .neon {
+            color: #ff007f;
+            text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 15px #ff007f;
         }
         .button {
-            background-color: #00FF00;
+            background-color: #00ffcc;
             color: #121212;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 5px;
+            padding: 15px 30px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: 0 0 10px #00ffcc;
+            transition: 0.3s;
         }
         .button:hover {
-            background-color: #32CD32;
-        }
-        .code {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 0.8rem;
-            color: #00FF00;
+            background-color: #ff007f;
+            box-shadow: 0 0 10px #ff007f;
         }
         .glitch {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: glitch 1s infinite linear alternate-reverse;
+            color: #ff007f;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            animation: glitch 1.5s infinite;
         }
         @keyframes glitch {
-            0% {
-                transform: translate(-50%, -50%) skewX(-20deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) skewX(20deg);
-            }
+            0% { left: 0; top: 0; }
+            25% { left: -3px; top: -3px; }
+            50% { left: 3px; top: 3px; }
+            75% { left: -3px; top: 3px; }
+            100% { left: 0; top: 0; }
+        }
+        .cyber-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.example.com/cyberpunk-bg.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: -1;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="glitch">ERROR 404</div>
-    <h1>404</h1>
-    <h2>Page Not Found</h2>
-    <div class="message">
-        Whoa, seems like you've ventured into a virtual void... this page doesn't exist in our data grid.
+    <div class="cyber-background"></div>
+    <div class="container">
+        <h1 class="glitch">404</h1>
+        <p>Oops! Looks like you’ve entered the wrong portal.<br> Try again, or we’ll have to call in the hackers.</p>
+        <a href="/" class="button">Back to the Matrix</a>
     </div>
-    <a href="/" class="button">Return to Home</a>
-    <div class="code">01000111 01100101 01101110 01100101 01110010</div>
-</div>
-
 </body>
 </html>
