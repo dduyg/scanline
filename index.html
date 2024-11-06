@@ -1,137 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Works Page</title>
-    <style>
-        /* Resetting some defaults */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <meta charset="UTF-8">
+  <title>Pure CSS Single Element Link Styles</title>
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Yrsa" rel="stylesheet"><link rel="stylesheet" href="./style.css">
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e5e8e8;
-    color: #2c3e50;
-    line-height: 1.6;
-}
-
-/* Container styling */
-.container {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Filters sidebar styling */
-.filters {
-    width: 200px;
-    padding-right: 20px;
-}
-
-.filters ul {
-    list-style: none;
-    font-weight: bold;
-}
-
-.filters li {
-    margin-bottom: 10px;
-    color: #7f8c8d;
-    cursor: pointer;
-}
-
-.filters li:first-child {
-    color: black;
-}
-
-/* Works content styling */
-.works {
-    flex: 1;
-}
-
-.work-item {
-    margin-bottom: 20px;
-    border-top: 1px solid #bdc3c7;
-    padding-top: 10px;
-}
-
-.date {
-    font-size: 0.9em;
-    color: #7f8c8d;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-top: 5px;
-}
-
-.details {
-    font-size: 0.9em;
-    color: #7f8c8d;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .filters {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .works {
-        padding: 0;
-    }
-}
-    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar for Filters -->
-        <aside class="filters">
-            <ul>
-                <li>All</li>
-                <li>作詞</li>
-                <li>作曲</li>
-                <li>編曲</li>
-                <li>プロデュース</li>
-                <li>ボーカルディレクション</li>
-                <li>BGM</li>
-                <li>劇伴</li>
-                <li>Remix</li>
-            </ul>
-        </aside>
+<!-- partial:index.partial.html -->
+<header class="pen-intro">
+  <h1>Single Element Link Styles</h1>
+  <p>These have been made to specifically be a single element link - use of pseudo but no wrapping spans here. Have tried to keep relatively browser supported.</p>
+  <p><small>(I have kept the styles independent of each other so that could be taken individually easily so there is some repetition)</small></p>
+</header>
 
-        <!-- Main Content for Works List -->
-        <main class="works">
-            <!-- Each work item -->
-            <div class="work-item">
-                <div class="date">2024.08</div>
-                <div class="title">白廻 - Carat.</div>
-                <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
-            </div>
-            <div class="work-item">
-                <div class="date">2024.06</div>
-                <div class="title">WaMi - ANGELiC GiRL</div>
-                <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
-            </div>
-            <div class="work-item">
-                <div class="date">2024.06</div>
-                <div class="title">楽園管理ホラーADV トワデシ</div>
-                <div class="details">BGM / プロデュース</div>
-            </div>
-            <!-- Add more work-item divs as needed -->
-        </main>
-    </div>
+<hr />
+
+<div class="button-container">
+  <h2>Draw Outline</h2>
+  <a href="#" class="draw-outline">Single Outline</a>
+  <a href="#" class="draw-outline draw-outline--tandem">Tandem Outline</a>
+</div>
+
+<hr />
+
+<div class="button-container">
+  <h2>Swipe Fill</h2>
+  <a href="#" class="swipe-fill swipe-fill--up">Swipe Fill Up</a>
+  <a href="#" class="swipe-fill swipe-fill--down">Swipe Fill Down</a>
+  <a href="#" class="swipe-fill swipe-fill--left">Swipe Fill Left</a>
+  <a href="#" class="swipe-fill swipe-fill--right">Swipe Fill Right</a>
+</div>
+
+<hr />
+<div class="button-container">
+  <h2>Box Fill</h2>
+  <a href="#" class="box-fill">Box Fill In</a>
+  <a href="#" class="box-fill box-fill--out">Box Fill Out</a>
+</div>
+
+<hr />
+
+<div class="button-container">
+  <h2>Cross Fade</h2>
+  <a href="#" class="cross-fade">Button One</a>
+</div>
+
+<hr />
+
+<h2>Text Underline Animation</h2>
+
+<p>Inspired by things that have seen from <a href="https://medium.design/crafting-link-underlines-on-medium-7c03a9274f9" target="_blank">Medium</a> and other peoples <a href="https://codepen.io/ghepting/pen/tLnHK" target="_blank">pens</a> but with an added attempt at bringing in some animation. Currently limited to a link that is in total 10000px wide across all lines but want to find a better way to do that.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="javascript:void(0)">Recusandae alias laboriosam quisquam, minima vero unde facilis eius, perspiciatis impedit modi amet doloremque</a>, optio voluptatibus <a href="javascript:void(0)">veritatis fugiat corrupti ullam pariatur</a> quasi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos odit, aliquam porro tempore amet voluptas voluptatibus aut consectetur, animi sit unde eos molestiae est minus sed doloribus repellendus error similique?</p>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 </body>
 </html>
