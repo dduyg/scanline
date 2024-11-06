@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiminalLoop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chokokutai&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Chokokutai", system-ui;
+            background: linear-gradient(135deg, #fffcdc, #d9a7c7);
+            color: #5a5a5a;
+            line-height: 1.5;
+            font-size: 15px;
+            overflow: hidden;
+        }
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        header p {
+            margin: 0.5rem 0;
+        }
+        
+        .filter-container {
+            margin-top: 10px;
+        }
+        .filter {
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+        .filter-dropdown {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.9);
+            border-radius: 5px;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 20;
+            width: 60%;
+        }
+        .filter-dropdown label {
+            display: block;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+        .filter-dropdown label:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding-top: 120px;
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 1rem;
+            width: 100%;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .tags {
+            display: none;
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+        .tag {
+            display: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            padding: 2px 5px;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Gossip Networks</h1>
+    <p>Neon dreams fade, pastel skies hum, lost signals drift, where memories run. Flicker lights pulse, soft synths play, yesterday’s ghost, in endless delay.</p>
+    <div class="filter-container">
+        <button class="filter" id="filter-btn">Filter by Tags</button>
+        <div class="filter-dropdown" id="filter-dropdown">
+            <!-- Dynamic filter options will be populated here -->
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="grid" id="works-container">
+        <!-- Dynamic works will be populated here -->
+    </div>
+</main>
+
+<script>
+    const works = [
+        { title: "●●○", url: "#", tags: ["productivity", "design"] },
+        { title: "●●○", url: "#", tags: ["coding", "productivity"] },
+        { title: "●●○", url: "#", tags: ["art", "vaporwave"] },
+        { title: "●●○", url: "#", tags: ["design", "art"] },
+        { title: "●●○", url: "#", tags: ["design", "art"] },
+        { title: "●●○", url: "#", tags: ["design", "art"] },
+        { title: "●●○", url: "#", tags: ["design", "art"] },
+        { title: "●●○", url: "#", tags: ["design", "art"] },
+        { title: "●●○", url: "#", tags: ["design", "art"] },
+        { title: "●●○", url: "#", tags: ["coding", "tutorial"] }
+    ];
+
+    const worksContainer = document.getElementById('works-container');
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const filterButton = document.getElementById('filter-btn');
+    const selectedTags = new Set();
+
+    function renderWorks(filterTags = []) {
+        worksContainer.innerHTML = '';
+        const filteredWorks = works.filter(work => 
+            filterTags.length === 0 || work.tags.some(tag => filterTags.includes(tag))
+        );
+
+        filteredWorks.forEach(work => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <a href="${work.url}">${work.title}</a>
+                <div class="tags">${work.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+            `;
+            worksContainer.appendChild(card);
+        });
+    }
+
+    function renderFilters() {
+        const allTags = new Set();
+        works.forEach(work => work.tags.forEach(tag => allTags.add(tag)));
+        filterDropdown.innerHTML = '';
+        allTags.forEach(tag => {
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" value="${tag}"> ${tag}`;
+            label.onclick = function () {
+                const checkbox = this.querySelector('input');
+                if (checkbox.checked) {
+                    selectedTags.add(tag);
+                } else {
+                    selectedTags.delete(tag);
+                }
+                renderWorks(Array.from(selectedTags));
+            };
+            filterDropdown.appendChild(label);
+        });
+    }
+
+    filterButton.addEventListener('click', () => {
+        filterDropdown.style.display = filterDropdown.style.display === 'none' || filterDropdown.style.display === '' ? 'block' : 'none';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!filterButton.contains(event.target) && !filterDropdown.contains(event.target)) {
+            filterDropdown.style.display = 'none';
+        }
+    });
+
+    // Initial render
+    renderWorks();
+    renderFilters();
+</script>
+</body>
+</html>
