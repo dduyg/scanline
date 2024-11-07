@@ -18,39 +18,35 @@
             margin: auto;
             padding: 20px;
         }
-
-/* Tags Column */
-.tags {
-    flex: 1;
-    max-width: 200px;
-    margin-right: 20px;
-    padding: 10px;
-}
-.tags h3 {
-    color: #999;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-.tags ul {
-    list-style: none;
-}
-.tags ul li {
-    font-size: 1em;
-    color: #666;
-    padding: 5px 0;
-}
-
-/* Works List */
-.works {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-}
-.work-entry {
-    display: flex;
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-}
+        
+        aside {
+            flex: 1;
+            max-width: 200px;
+            margin-right: 20px;
+            padding: 10px;
+        }
+        aside h3 {
+            color: #999;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        aside div {
+            font-size: 1em;
+            color: #666;
+            padding: 5px;
+        }
+        
+        /* Works List */
+        main {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+        .work-entry {
+            display: flex;
+            border-top: 1px solid #ddd;
+            padding: 15px 0;
+        }
 .work-entry .date {
     width: 80px;
     color: #333;
@@ -61,7 +57,7 @@
     color: #555;
     font-size: 1.1em;
 }
-.work-entry .roles {
+.work-entry .details {
     flex: 3;
     color: #888;
     font-size: 0.9em;
@@ -85,37 +81,30 @@
 </head>
 <body>
     <div class="container">
-        <!-- Tags Column (Filters) -->
-        <div class="tags">
-            <h3>All</h3>
-            <ul>
-                <li>All</li>
-                <li>作詞</li>
-                <li>作曲</li>
-                <li>編曲</li>
-                <li>プロデュース</li>
-                <li>ボーカルディレクション</li>
-                <li>BGM</li>
-                <li>劇伴</li>
-                <li>Remix</li>
-            </ul>
-        </div>
-
-        <!-- Main Content (Works List) -->
-        <div class="works">
-            <!-- Example entry for desktop -->
+        <aside>
+            <h3>Filter</h3>
+            <div>All</div>
+            <div>作詞</div>
+            <div>作曲</div>
+            <div>編曲</div>
+            <div>プロデュース</div>
+            <div>ボーカルディレ</div>
+            <div>クション</div>
+            <div>劇伴</div>
+        </aside>
+        <main>
             <div class="work-entry">
                 <div class="date">2024.08</div>
                 <div class="title">白迄 - Carat.</div>
-                <div class="roles">作詞 / 作曲 / ボーカルディレクション</div>
+                <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
             </div>
             <div class="work-entry">
                 <div class="date">2024.06</div>
                 <div class="title">WaMi - ANGELiC GiRL</div>
-                <div class="roles">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
+                <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
             </div>
             <!-- Additional entries as needed -->
-        </div>
+        </main>
     </div>
 </body>
 </html>
