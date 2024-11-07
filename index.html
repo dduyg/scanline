@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Dropdown with Multiple checkbox select with jQuery</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <style>
     body {
   font: normal 14px/100% "Andale Mono", AndaleMono, monospace;
@@ -136,7 +134,42 @@ button {
     </dd>
   <button>Filter</button>
 </dl>
-<!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".dropdown dt a").on('click', function() {
+        $(".dropdown dd ul").slideToggle('fast');
+      });
+
+      $(".dropdown dd ul li a").on('click', function() {
+        $(".dropdown dd ul").hide();
+      });
+
+      function getSelectedValue(id) {
+        return $("#" + id).find("dt a span.value").html();
+      }
+
+      $(document).bind('click', function(e) {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
+      });
+
+      $('.mutliSelect input[type="checkbox"]').on('click', function() {
+        var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+            title = $(this).val() + ",";
+
+        if ($(this).is(':checked')) {
+          var html = '<span title="' + title + '">' + title + '</span>';
+          $('.multiSel').append(html);
+          $(".hida").hide();
+        } else {
+          $('span[title="' + title + '"]').remove();
+          var ret = $(".hida");
+          $('.dropdown dt a').append(ret);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
