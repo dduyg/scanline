@@ -1,130 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #E9E3E6;
-        }
-        .container {
-            display: flex;
-            flex-direction: row;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
- 
-        .sidebar {
-            flex: 1;
-            max-width: 200px;
-            margin-right: 20px;
-            padding: 10px;
-        }
-        .sidebar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .sidebar li {
-            cursor: pointer;
-            color: #666;
-        }
-        .sidebar li:hover {
-            font-weight: bold;
-            color: #E0E0E0;
-        }
-  
-        /* Works List */
-        .content {
-            flex: 3;
-            display: flex;
-            flex-direction: column;
-        }
-        .item {
-            display: flex;
-            align-items: baseline;  /* removable if you want original state */
-            padding: 15px 0;
-            border-top: 1px solid;
-        }
-        .item:last-child {
-            border-bottom: 1px solid;
-        }  
-        .date {
-            width: 80px;
-            color: #555;
-        }
-        .title {
-            flex: 2;
-            color: #333;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .details {
-            flex: 3;
-            color: #888;
-            font-size: 0.9em;
-            text-align: right;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 10px;
-            }
-            .sidebar {
-                max-width: 100%;
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            .sidebar ul {
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            .content {
-                padding-top: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Morphing tab button with list</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:700" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-  <div class="container">
-        <aside class="sidebar">
-            <ul>
-                <li>All</li>
-                <li>作詞</li>
-                <li>作曲</li>
-                <li>編曲</li>
-                <li>プロデュース</li>
-                <li>ボーカルディレ
-                <li>クション</li>
-                <li>劇伴</li>
-            </ul>
-        </aside>
-        <main class="content">
-            <!-- Each entry in the list -->
-            <div class="item">
-                <div class="date">2024.08</div>
-                <div class="title">白迄 - Carat.</div>
-                <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
-            </div>
-            <div class="item">
-                <div class="date">2024.06</div>
-                <div class="title">WaMi - ANGELiC GiRL</div>
-                <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
-            </div>
-            <!-- Add additional entries as needed -->
-            <!-- ... -->
-        </main>
-    </div>
+<!-- partial:index.partial.html -->
+<div class="m-dropdown">
+	<div class="e-button open">
+		Click Me
+		<div class="e-burger">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<ul class="e-list">
+		<li><a href="#">Item 1</a></li>
+		<li><a href="#">Item 2</a></li>
+		<li><a href="#">Item 3</a></li>
+		<li><a href="#">Item 4</a></li>
+		<li><a href="#">Item 5</a></li>
+	</ul>
+</div>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+<script src='https://use.fontawesome.com/b5bf1bd49e.js'></script><script  src="./script.js"></script>
+
 </body>
 </html>
