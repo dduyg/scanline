@@ -27,19 +27,17 @@
         }
         .sidebar ul {
             list-style: none;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
         .sidebar li {
-            font-weight: bold;
             cursor: pointer;
             color: #666;
         }
         .sidebar li:hover {
-            color: #FF6F61;
+            font-weight: bold;
+            color: #E0E0E0;
         }
         
         /* Works List */
@@ -53,47 +51,46 @@
             border-top: 1px solid #ddd;
             padding: 15px 0;
         }
-.work-entry .date {
-    width: 80px;
-    color: #333;
-    font-weight: bold;
-}
-.work-entry .title {
-    flex: 2;
-    color: #555;
-    font-size: 1.1em;
-}
-.work-entry .details {
-    flex: 3;
-    color: #888;
-    font-size: 0.9em;
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .sidebar {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    .sidebar ul {
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 15px;
-    }  
-    .tags {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-    .content {
-        padding-top: 10px;
-    }
-}
+        .work-entry .date {
+            width: 80px;
+            color: #333;
+            font-weight: bold;
+        }
+        .work-entry .title {
+            flex: 2;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .work-entry .details {
+            flex: 3;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .sidebar ul {
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 15px;
+            }  
+            .tags {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            .content {
+                padding-top: 10px;
+            }
+        }
     </style>
 </head>
 <body>
