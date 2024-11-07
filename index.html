@@ -18,22 +18,28 @@
             margin: auto;
             padding: 20px;
         }
-        
-        aside {
+ 
+        .sidebar {
             flex: 1;
             max-width: 200px;
             margin-right: 20px;
             padding: 10px;
         }
-        aside h3 {
-            color: #999;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-        aside div {
-            font-size: 1em;
+        .sidebar li {
+            font-weight: bold;
+            cursor: pointer;
             color: #666;
-            padding: 5px;
+        }
+        .sidebar li:hover {
+            color: #FF6F61;
         }
         
         /* Works List */
@@ -69,6 +75,17 @@
         flex-direction: column;
         padding: 10px;
     }
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .sidebar ul {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+    }  
     .tags {
         max-width: 100%;
         margin-bottom: 20px;
@@ -80,19 +97,20 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <aside>
-            <h3>Filter</h3>
-            <div>All</div>
-            <div>作詞</div>
-            <div>作曲</div>
-            <div>編曲</div>
-            <div>プロデュース</div>
-            <div>ボーカルディレ</div>
-            <div>クション</div>
-            <div>劇伴</div>
+  <div class="container">
+        <aside class="sidebar">
+            <ul>
+                <li>All</li>
+                <li>作詞</li>
+                <li>作曲</li>
+                <li>編曲</li>
+                <li>プロデュース</li>
+                <li>ボーカルディレ
+                <li>クション</li>
+                <li>劇伴</li>
+            </ul>
         </aside>
-        <main>
+        <main class="content">
             <div class="work-entry">
                 <div class="date">2024.08</div>
                 <div class="title">白迄 - Carat.</div>
@@ -107,4 +125,4 @@
         </main>
     </div>
 </body>
-</html>
+</html>   
