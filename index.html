@@ -1,152 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiminalLoop</title>
-    <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #33424d; /* Background color similar to the screenshot */
-    color: #ffffff;
-}
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiminalLoop</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.sidebar {
-    width: 15%;
-    padding-right: 20px;
-    border-right: 1px solid #555;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #4a5b63;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
 
-.sidebar ul {
-    list-style-type: none;
-}
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+    }
 
-.sidebar ul li {
-    margin-bottom: 10px;
-}
+    /* Sidebar styling */
+    .sidebar {
+      width: 15%;
+      padding-right: 20px;
+      border-right: 1px solid #888;
+    }
 
-.sidebar ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1em;
-}
+    .sidebar ul {
+      list-style: none;
+    }
 
-.sidebar ul li a:hover {
-    color: #d3d3d3;
-}
+    .sidebar li {
+      margin: 10px 0;
+      font-weight: bold;
+    }
 
-.main-content {
-    flex: 1;
-    padding-left: 20px;
-}
+    /* Main content styling */
+    .main-content {
+      width: 85%;
+      padding-left: 20px;
+    }
 
-.album {
-    margin-bottom: 40px;
-}
+    .release-item {
+      margin-bottom: 40px;
+    }
 
-.album h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
+    .release-title {
+      font-size: 1.8em;
+      margin-bottom: 5px;
+    }
 
-.album p {
-    color: #a0a0a0;
-    font-size: 1em;
-    margin-bottom: 10px;
-}
+    .release-meta {
+      font-size: 0.9em;
+      color: #a0a0a0;
+      margin-bottom: 10px;
+    }
 
-.album img {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px;
-}
+    .release-cover img {
+      width: 100%;
+      max-width: 150px;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
 
-.tracklist {
-    list-style-type: none;
-    margin-bottom: 10px;
-}
+    .release-info {
+      display: flex;
+      align-items: center;
+    }
 
-.tracklist li {
-    font-size: 1em;
-    margin-bottom: 5px;
-}
+    .tracklist {
+      margin-top: 10px;
+    }
 
-.view-detail {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-}
+    .tracklist li {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+    }
 
-.view-detail:hover {
-    color: #d3d3d3;
-}
-    </style>
+    .view-detail {
+      color: #b0d0ff;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .view-detail:hover {
+      text-decoration: underline;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Left Column for Tags -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="#">All</a></li>
-                <li><a href="#">Single</a></li>
-                <li><a href="#">EP</a></li>
-                <li><a href="#">Album</a></li>
-                <li><a href="#">Featuring</a></li>
-            </ul>
-        </div>
 
-        <!-- Main Content Area for Albums -->
-        <div class="main-content">
-            <!-- Album Section -->
-            <div class="album">
-                <h2>butcher knife</h2>
-                <p>2024.09 - samayuzame - EP</p>
-                <img src="butcher-knife.jpg" alt="butcher knife album cover">
-                <ul class="tracklist">
-                    <li>夜鶴の告白</li>
-                    <li>亡き乙女のためのⅡ (Remixed by Yamato Kasai from Mili)</li>
-                    <li>シンデレラ・コンプレックス (Remixed by 哲之助)</li>
-                    <li>metaphor (Remixed by yuigot)</li>
-                </ul>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-
-            <!-- Album Section -->
-            <div class="album">
-                <h2>きめら</h2>
-                <p>2024.08 - 1e1 - Featuring</p>
-                <img src="kimera.jpg" alt="きめら album cover">
-                <ul class="tracklist">
-                    <li>きめら</li>
-                </ul>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-
-            <!-- Album Section -->
-            <div class="album">
-                <h2>metaphor</h2>
-                <p>2024.06 - samayuzame - Single</p>
-                <img src="metaphor.jpg" alt="metaphor album cover">
-                <ul class="tracklist">
-                    <li>metaphor</li>
-                </ul>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-
-            <!-- Additional albums as needed -->
-        </div>
+  <div class="container">
+    <!-- Sidebar for Tags -->
+    <div class="sidebar">
+      <ul>
+        <li>All</li>
+        <li>Single</li>
+        <li>EP</li>
+        <li>Album</li>
+        <li>Featuring</li>
+      </ul>
     </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      
+      <!-- Release 1 -->
+      <div class="release-item">
+        <div class="release-title">butcher knife</div>
+        <div class="release-meta">2024.09 · samayuzame · EP</div>
+        <div class="release-info">
+          <div class="release-cover">
+            <img src="cover1.jpg" alt="Butcher Knife Cover">
+          </div>
+          <ul class="tracklist">
+            <li><span>1 夜顔の告白</span></li>
+            <li><span>2 亡き乙女のためのII (Remixed by Yamato Kasai from Mili)</span></li>
+            <li><span>3 シンデレラ・コンプレックス (Remixed by 哲之助)</span></li>
+            <li><span>4 metaphor (Remixed by yuigot)</span></li>
+          </ul>
+        </div>
+        <a href="#" class="view-detail">View Detail →</a>
+      </div>
+
+      <!-- Release 2 -->
+      <div class="release-item">
+        <div class="release-title">きめら</div>
+        <div class="release-meta">2024.08 · 1e1 · Featuring</div>
+        <div class="release-info">
+          <div class="release-cover">
+            <img src="cover2.jpg" alt="Kimera Cover">
+          </div>
+          <ul class="tracklist">
+            <li><span>2 きめら</span></li>
+          </ul>
+        </div>
+        <a href="#" class="view-detail">View Detail →</a>
+      </div>
+
+      <!-- Release 3 -->
+      <div class="release-item">
+        <div class="release-title">metaphor</div>
+        <div class="release-meta">2024.06 · samayuzame · Single</div>
+        <div class="release-info">
+          <div class="release-cover">
+            <img src="cover3.jpg" alt="Metaphor Cover">
+          </div>
+          <ul class="tracklist">
+            <li><span>1 metaphor</span></li>
+          </ul>
+        </div>
+        <a href="#" class="view-detail">View Detail →</a>
+      </div>
+
+      <!-- Release 4 -->
+      <div class="release-item">
+        <div class="release-title">シンデレラ・コンプレックス</div>
+        <div class="release-meta">2024.04 · samayuzame · Single</div>
+        <div class="release-info">
+          <div class="release-cover">
+            <img src="cover4.jpg" alt="Cinderella Complex Cover">
+          </div>
+          <ul class="tracklist">
+            <li><span>1 シンデレラ・コンプレックス</span></li>
+          </ul>
+        </div>
+        <a href="#" class="view-detail">View Detail →</a>
+      </div>
+
+      <!-- Release 5 -->
+      <div class="release-item">
+        <div class="release-title">亡き乙女のためのII</div>
+        <div class="release-meta">2024.01 · samayuzame · Single</div>
+        <div class="release-info">
+          <div class="release-cover">
+            <img src="cover5.jpg" alt="Nakimono no Tame no II Cover">
+          </div>
+          <ul class="tracklist">
+            <li><span>1 亡き乙女のためのII</span></li>
+          </ul>
+        </div>
+        <a href="#" class="view-detail">View Detail →</a>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
