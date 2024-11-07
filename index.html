@@ -3,202 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocoon Records</title>
+    <title>Album Listings</title>
     <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Page setup */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #405263; /* Background color based on the screenshot */
-            color: #e0e0e0;
-            display: flex;
-            padding: 20px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #33424d; /* Background color similar to the screenshot */
+    color: #ffffff;
+}
 
-        /* Sidebar styling */
-        .sidebar {
-            width: 20%;
-            padding-right: 20px;
-            border-right: 1px solid #606c7a;
-        }
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        .sidebar ul {
-            list-style: none;
-            line-height: 2;
-        }
+.sidebar {
+    width: 150px;
+    padding-right: 20px;
+    border-right: 1px solid #555;
+}
 
-        .sidebar ul li {
-            cursor: pointer;
-        }
+.sidebar ul {
+    list-style-type: none;
+}
 
-        /* Main content area */
-        .main-content {
-            width: 80%;
-            padding-left: 20px;
-        }
+.sidebar ul li {
+    margin-bottom: 10px;
+}
 
-        /* Section styling */
-        .section {
-            margin-bottom: 40px;
-        }
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
 
-        .section h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+.sidebar ul li a:hover {
+    color: #d3d3d3;
+}
 
-        .album-cover {
-            width: 150px;
-            height: 150px;
-            background-color: #333;
-            margin-right: 20px;
-        }
+.main-content {
+    flex: 1;
+    padding-left: 20px;
+}
 
-        /* Album layout */
-        .album {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+.album {
+    margin-bottom: 40px;
+}
 
-        .album-info {
-            flex-grow: 1;
-        }
+.album h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
 
-        .album-info h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
+.album p {
+    color: #a0a0a0;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
 
-        .album-info p {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
+.album img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
 
-        .track-list {
-            font-size: 14px;
-            margin-top: 10px;
-        }
+.tracklist {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
 
-        .track-list li {
-            line-height: 1.8;
-        }
+.tracklist li {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
 
-        /* View detail link */
-        .view-detail {
-            text-decoration: none;
-            color: #a0c4e3;
-            margin-left: auto;
-        }
+.view-detail {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
 
+.view-detail:hover {
+    color: #d3d3d3;
+}
     </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Left Column for Tags -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">All</a></li>
+                <li><a href="#">Single</a></li>
+                <li><a href="#">EP</a></li>
+                <li><a href="#">Album</a></li>
+                <li><a href="#">Featuring</a></li>
+            </ul>
+        </div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <ul>
-            <li>All</li>
-            <li>Single</li>
-            <li>EP</li>
-            <li>Album</li>
-            <li>Featuring</li>
-        </ul>
+        <!-- Main Content Area for Albums -->
+        <div class="main-content">
+            <!-- Album Section -->
+            <div class="album">
+                <h2>butcher knife</h2>
+                <p>2024.09 - samayuzame - EP</p>
+                <img src="butcher-knife.jpg" alt="butcher knife album cover">
+                <ul class="tracklist">
+                    <li>夜鶴の告白</li>
+                    <li>亡き乙女のためのⅡ (Remixed by Yamato Kasai from Mili)</li>
+                    <li>シンデレラ・コンプレックス (Remixed by 哲之助)</li>
+                    <li>metaphor (Remixed by yuigot)</li>
+                </ul>
+                <a href="#" class="view-detail">View Detail →</a>
+            </div>
+
+            <!-- Album Section -->
+            <div class="album">
+                <h2>きめら</h2>
+                <p>2024.08 - 1e1 - Featuring</p>
+                <img src="kimera.jpg" alt="きめら album cover">
+                <ul class="tracklist">
+                    <li>きめら</li>
+                </ul>
+                <a href="#" class="view-detail">View Detail →</a>
+            </div>
+
+            <!-- Album Section -->
+            <div class="album">
+                <h2>metaphor</h2>
+                <p>2024.06 - samayuzame - Single</p>
+                <img src="metaphor.jpg" alt="metaphor album cover">
+                <ul class="tracklist">
+                    <li>metaphor</li>
+                </ul>
+                <a href="#" class="view-detail">View Detail →</a>
+            </div>
+
+            <!-- Additional albums as needed -->
+        </div>
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-
-        <!-- Section for "butcher knife" -->
-        <div class="section">
-            <h2>butcher knife</h2>
-            <div class="album">
-                <div class="album-cover" style="background-image: url('path-to-cover-image.jpg');"></div>
-                <div class="album-info">
-                    <h3>2024.09 &nbsp; EP</h3>
-                    <p>by samayuzame</p>
-                    <ul class="track-list">
-                        <li>1 夜鷹の告白</li>
-                        <li>2 亡き乙女のためのII (Remixed by Yamato Kasai from Mili)</li>
-                        <li>3 シンデレラ・コンプレックス (Remixed by 哲之助)</li>
-                        <li>4 metaphor (Remixed by yuigot)</li>
-                    </ul>
-                </div>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-        </div>
-
-        <!-- Section for "きめら" -->
-        <div class="section">
-            <h2>きめら</h2>
-            <div class="album">
-                <div class="album-cover" style="background-image: url('path-to-cover-image.jpg');"></div>
-                <div class="album-info">
-                    <h3>2024.08 &nbsp; Featuring</h3>
-                    <p>by 1e1</p>
-                    <ul class="track-list">
-                        <li>2 きめら</li>
-                    </ul>
-                </div>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-        </div>
-
-        <!-- Section for "metaphor" -->
-        <div class="section">
-            <h2>metaphor</h2>
-            <div class="album">
-                <div class="album-cover" style="background-image: url('path-to-cover-image.jpg');"></div>
-                <div class="album-info">
-                    <h3>2024.06 &nbsp; Single</h3>
-                    <p>by samayuzame</p>
-                    <ul class="track-list">
-                        <li>1 metaphor</li>
-                    </ul>
-                </div>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-        </div>
-
-        <!-- Section for シンデレラ・コンプレックス -->
-        <div class="section">
-            <h2>シンデレラ・コンプレックス</h2>
-            <div class="album">
-                <div class="album-cover" style="background-image: url('path-to-cover-image.jpg');"></div>
-                <div class="album-info">
-                    <h3>2024.04 &nbsp; Single</h3>
-                    <p>by samayuzame</p>
-                    <ul class="track-list">
-                        <li>1 シンデレラ・コンプレックス</li>
-                    </ul>
-                </div>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-        </div>
-
-        <!-- Section for 亡き乙女のためのII -->
-        <div class="section">
-            <h2>亡き乙女のためのII</h2>
-            <div class="album">
-                <div class="album-cover" style="background-image: url('path-to-cover-image.jpg');"></div>
-                <div class="album-info">
-                    <h3>2024.01 &nbsp; Single</h3>
-                    <p>by samayuzame</p>
-                    <ul class="track-list">
-                        <li>1 亡き乙女のためのII</li>
-                    </ul>
-                </div>
-                <a href="#" class="view-detail">View Detail →</a>
-            </div>
-        </div>
-
-    </div>
-
 </body>
 </html>
