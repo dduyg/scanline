@@ -48,23 +48,26 @@
             display: flex;
             flex-direction: column;
         }
-        .work-entry {
+        .item {
             display: flex;
             align-items: baseline;  /* removable if you want original state */
             padding: 15px 0;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid;
         }
-        .work-entry .date {
+        .item:last-child {
+            border-bottom: 1px solid;
+        }  
+        .date {
             width: 80px;
             color: #555;
         }
-        .work-entry .title {
+        .title {
             flex: 2;
             color: #333;
             font-weight: bold;
             font-size: 1.1em;
         }
-        .work-entry .details {
+        .details {
             flex: 3;
             color: #888;
             font-size: 0.9em;
@@ -109,12 +112,12 @@
         </aside>
         <main class="content">
             <!-- Each entry in the list -->
-            <div class="work-entry">
+            <div class="item">
                 <div class="date">2024.08</div>
                 <div class="title">白迄 - Carat.</div>
                 <div class="details">作詞 / 作曲 / ボーカルディレクション</div>
             </div>
-            <div class="work-entry">
+            <div class="item">
                 <div class="date">2024.06</div>
                 <div class="title">WaMi - ANGELiC GiRL</div>
                 <div class="details">作詞 / 作曲 / 編曲 / ボーカルディレクション / プロデュース</div>
