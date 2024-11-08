@@ -34,20 +34,24 @@ body {
 
 /* Sidebar styling */
 .sidebar {
+    flex: 1;
+    margin-right: 20px;
+
     position: fixed; /* Fix the sidebar position */
     top: 0;
     left: 0;
     bottom: 0;
-    width: 200px;
+    width: 20%;
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    background-color: #3b4c56; /* Match background color */
 }
 
 .sidebar ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar a {
@@ -60,14 +64,12 @@ body {
 
 /* Content styling */
 .content {
-    flex: 1;
-    margin-left: 220px; /* Add space for the fixed sidebar */
-    height: 100%;
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 20px;
+    flex: 3;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    height: 100%;
+    overflow-y: auto; /* Enable vertical 
 }
 
 /* Individual release section styling */
@@ -114,7 +116,7 @@ body {
 .tracklist {
     list-style: decimal inside;
     color: #e0e6ed;
-    flex: 1;  /* Allow tracklist to take up remaining space */
+    flex: 1; /* Allow tracklist to take up remaining space */
 }
 
 .details-link {
@@ -125,19 +127,7 @@ body {
     font-size: 0.9em;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    /* Adjust sidebar width for smaller screens */
-    .sidebar {
-        width: 150px;
-    }
-
-    /* Adjust content margin for smaller screens */
-    .content {
-        margin-left: 170px;
-    }
-
-    /* Adjust image size for smaller screens */
     .cover-image {
         max-width: 100px;
     }
