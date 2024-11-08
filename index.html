@@ -11,7 +11,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
     background-color: #3b4c56;
@@ -58,49 +57,53 @@ body {
     padding-bottom: 20px;
 }
 
-/* Title styling */
-.release h2 {
+.title {
     font-size: 1.5em;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 /* Metadata row styling */
 .metadata {
     display: flex;
-    gap: 20px;
-    font-size: 1em;
-    color: #cfd6dd;
-    padding-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #6f818e;
-    margin-bottom: 15px; /* Adds space between metadata and image */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
 }
 
-.metadata .artist {
-    font-weight: bold;
+.date, .artist {
+    color: #cfd6dd;
 }
 
-.metadata .type {
+.type {
+    color: #ff6b6b;
     font-style: italic;
 }
 
-/* Image styling */
-.release img {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px;
+/* Details layout for image and tracklist */
+.details {
+    display: flex;
+    gap: 20px;
 }
 
-/* Track list styling */
-.release ol, .release p {
-    margin-bottom: 10px;
+.cover-image {
+    width: 100%;
+    max-width: 200px;
+}
+
+.tracklist {
+    list-style: decimal inside;
     color: #e0e6ed;
 }
 
-/* Details link */
 .details-link {
+    display: inline-block;
+    margin-top: 15px;
     color: #ff6b6b;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 0.9em;
 }
 
 /* Responsive layout for mobile */
@@ -112,6 +115,14 @@ body {
     .sidebar {
         margin-right: 0;
         margin-bottom: 20px;
+    }
+
+    .details {
+        flex-direction: column;
+    }
+
+    .cover-image {
+        margin-bottom: 10px;
     }
 }
     </style>
@@ -133,37 +144,50 @@ body {
         <main class="content">
             <!-- First Item -->
             <section class="release">
-                <h2>butcher knife</h2>
+                <h2 class="title">butcher knife</h2>
+                
+                <!-- Metadata Row -->
                 <div class="metadata">
-                    <span>2024.09</span>
+                    <span class="date">2024.09</span>
                     <span class="artist">samayuzame</span>
                     <span class="type">EP</span>
                 </div>
-                <img src="path/to/butcher-knife.jpg" alt="butcher knife cover">
-                <ol>
-                    <li>夜顔の告白</li>
-                    <li>亡き乙女のためのII (Remixed by Yamato Kasai from Mili)</li>
-                    <li>シンデレラ・コンプレックス (Remixed by 雄之助)</li>
-                    <li>metaphor (Remixed by yuigot)</li>
-                </ol>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <img src="path/to/butcher-knife.jpg" alt="butcher knife cover" class="cover-image">
+                    <ol class="tracklist">
+                        <li>夜顔の告白</li>
+                        <li>亡き乙女のためのII (Remixed by Yamato Kasai from Mili)</li>
+                        <li>シンデレラ・コンプレックス (Remixed by 雄之助)</li>
+                        <li>metaphor (Remixed by yuigot)</li>
+                    </ol>
+                </div>
+                
                 <a href="#" class="details-link">View Detail →</a>
             </section>
 
             <!-- Second Item -->
             <section class="release">
-                <h2>きめら</h2>
+                <h2 class="title">きめら</h2>
+                
+                <!-- Metadata Row -->
                 <div class="metadata">
-                    <span>2024.08</span>
+                    <span class="date">2024.08</span>
                     <span class="artist">1e1</span>
                     <span class="type">Featuring</span>
                 </div>
-                <img src="path/to/kimera.jpg" alt="kimera cover">
-                <p>2. きめら</p>
+
+                <!-- Image and Tracklist Row -->
+                <div class="details">
+                    <img src="path/to/kimera.jpg" alt="kimera cover" class="cover-image">
+                    <ol class="tracklist">
+                        <li>きめら</li>
+                    </ol>
+                </div>
+
                 <a href="#" class="details-link">View Detail →</a>
             </section>
-
-            <!-- Additional Items (add similarly) -->
-            <!-- ... -->
         </main>
     </div>
 </body>
