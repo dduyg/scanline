@@ -29,7 +29,6 @@ body {
 /* Sidebar styling */
 .sidebar {
     flex: 1;
-    max-width: 200px; /* Set a maximum width for sidebar */
     margin-right: 20px;
 }
 
@@ -109,22 +108,20 @@ body {
     font-size: 0.9em;
 }
 
-/* Responsive adjustments */
+/* Responsive layout adjustments */
 @media (max-width: 768px) {
-    /* Maintain row layout for .container */
     .container {
-        display: flex;
+        flex-direction: column;
     }
 
-    /* Adjust sidebar width for smaller screens */
     .sidebar {
-        max-width: 150px;
-        margin-right: 10px;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
-    /* Adjust image size to fit smaller screens */
+    /* Keep .details in row layout on smaller screens */
     .cover-image {
-        max-width: 100px;
+        max-width: 150px; /* Reduce image size to fit better on smaller screens */
     }
 }
     </style>
