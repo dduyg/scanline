@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Releases</title>
     <style>
+/* Reset and basic styling */
 * {
     margin: 0;
     padding: 0;
@@ -54,36 +55,52 @@ body {
 
 /* Individual release section styling */
 .release {
-    border-bottom: 1px solid #6f818e;
     padding-bottom: 20px;
 }
 
+/* Title styling */
 .release h2 {
     font-size: 1.5em;
-}
-
-.release .artist {
-    font-weight: bold;
-}
-
-.release .type {
-    font-style: italic;
-    color: #cfd6dd;
-}
-
-.release img {
-    width: 100%;
-    max-width: 200px;
-    margin: 10px 0;
-}
-
-.release ol, .release p {
     margin-bottom: 5px;
 }
 
+/* Metadata row styling */
+.metadata {
+    display: flex;
+    gap: 20px;
+    font-size: 1em;
+    color: #cfd6dd;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #6f818e;
+    margin-bottom: 15px; /* Adds space between metadata and image */
+}
+
+.metadata .artist {
+    font-weight: bold;
+}
+
+.metadata .type {
+    font-style: italic;
+}
+
+/* Image styling */
+.release img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+/* Track list styling */
+.release ol, .release p {
+    margin-bottom: 10px;
+    color: #e0e6ed;
+}
+
+/* Details link */
 .details-link {
     color: #ff6b6b;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* Responsive layout for mobile */
@@ -117,8 +134,11 @@ body {
             <!-- First Item -->
             <section class="release">
                 <h2>butcher knife</h2>
-                <p>2024.09 - <span class="artist">samayuzame</span></p>
-                <p class="type">EP</p>
+                <div class="metadata">
+                    <span>2024.09</span>
+                    <span class="artist">samayuzame</span>
+                    <span class="type">EP</span>
+                </div>
                 <img src="path/to/butcher-knife.jpg" alt="butcher knife cover">
                 <ol>
                     <li>夜顔の告白</li>
@@ -132,8 +152,11 @@ body {
             <!-- Second Item -->
             <section class="release">
                 <h2>きめら</h2>
-                <p>2024.08 - <span class="artist">1e1</span></p>
-                <p class="type">Featuring</p>
+                <div class="metadata">
+                    <span>2024.08</span>
+                    <span class="artist">1e1</span>
+                    <span class="type">Featuring</span>
+                </div>
                 <img src="path/to/kimera.jpg" alt="kimera cover">
                 <p>2. きめら</p>
                 <a href="#" class="details-link">View Detail →</a>
