@@ -10,6 +10,20 @@
 | <img src="https://img.shields.io/badge/■F0F0F0-F0F0F0?style=for-the-badge"/> | <img src="https://img.shields.io/badge/■333333-333333?style=for-the-badge"/> |
 | <img src="https://img.shields.io/badge/■F5F5DC-F5F5DC?style=for-the-badge"/> | <img src="https://img.shields.io/badge/■4E342E-4E342E?style=for-the-badge"/> |
 | ■ | ■ |
+
+<br><br>
+
+| `BG` | `TXT` |
+|----|-----|
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
+| ■ | ■ |
 | ■ | ■ |
 | ■ | ■ |
 | ■ | ■ |
