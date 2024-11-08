@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liminal Loop</title>
     <style>
-/* Resetting margins and paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     background-color: #2D2D2D; /* Dark background similar to the screenshot */
     font-family: 'Arial', sans-serif;
@@ -20,10 +13,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
-
 .container {
-    width: 80%;
+    width: 95%;
     max-width: 800px;
 }
 
@@ -33,40 +27,26 @@ header {
     align-items: center;
     margin-bottom: 2rem;
 }
-
 header h1 {
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 0.1em;
 }
-
-.page-number {
+header .page-number {
     font-size: 1.5rem;
     color: #B0B0B0; /* Lighter gray for page number */
 }
-
-.work-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.work-item {
+        
+.item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #444; /* Thin separator line */
-    padding-bottom: 0.5rem;
-}
-
-.project-name {
-    font-size: 1.2rem;
-    font-weight: lighter;
+    border-bottom: 1px solid;
+    padding: 0.5em 0;
+}        
+.name {
     text-transform: lowercase; /* Make all project names lowercase */
 }
-
-.project-type {
-    font-size: 1.2rem;
-    font-weight: lighter;
+.type {
     color: #B0B0B0; /* Light gray for project types */
 }
     </style>
@@ -78,43 +58,33 @@ header h1 {
             <span class="page-number">9</span>
         </header>
         
-        <div class="work-list">
-            <div class="work-item">
-                <span class="project-name">sharlee</span>
-                <span class="project-type">Branding</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">act responsable</span>
-                <span class="project-type">Web Development</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">dua lipa</span>
-                <span class="project-type">Portrait</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">cocolyze</span>
-                <span class="project-type">UX/UI Design</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">les indécis</span>
-                <span class="project-type">Branding</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">game of the goose</span>
-                <span class="project-type">Game Design</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">l'équipe explore</span>
-                <span class="project-type">Illustration</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">silhouette</span>
-                <span class="project-type">Portrait</span>
-            </div>
-            <div class="work-item">
-                <span class="project-name">portraits</span>
-                <span class="project-type">Portrait</span>
-            </div>
+        <div class="item">
+            <span class="name">sharlee</span>
+            <span class="type">Branding</span>
+        </div>
+        <div class="item">
+            <span class="name">act responsable</span>
+            <span class="type">Web Development</span>
+        </div>
+        <div class="item">
+            <span class="name">dua lipa</span>
+            <span class="type">Portrait</span>
+        </div>
+        <div class="item">
+            <span class="name">cocolyze</span>
+            <span class="type">UX/UI Design</span>
+        </div>
+        <div class="item">
+            <span class="name">les indécis</span>
+            <span class="type">Branding</span>
+        </div>
+        <div class="item">
+            <span class="name">game of the goose</span>
+            <span class="type">Game Design</span>
+        </div>
+        <div class="item">
+            <span class="name">l'équipe explore</span>
+            <span class="type">Illustration</span>
         </div>
     </div>
 </body>
