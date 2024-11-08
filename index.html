@@ -12,11 +12,6 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%; /* Make sure the body and html take full height */
-    overflow: hidden; /* Prevent body scroll when .content is scrolled */
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #3b4c56;
@@ -27,7 +22,6 @@ body {
 .container {
     display: flex;
     max-width: 1200px;
-    height: 100vh; /* Full viewport height */
     margin: 0 auto;
     padding: 20px;
 }
@@ -35,16 +29,8 @@ body {
 /* Sidebar styling */
 .sidebar {
     flex: 1;
+    max-width: 200px; /* Set a maximum width for sidebar */
     margin-right: 20px;
-
-    position: fixed; /* Fix the sidebar position */
-    top: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .sidebar ul {
@@ -58,7 +44,6 @@ body {
     color: #e0e6ed;
     font-size: 1.2em;
     margin-bottom: 10px;
-    text-align: center; /* Center text inside links */
 }
 
 /* Content styling */
@@ -67,9 +52,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto; /* Enable vertical 
 }
 
 /* Individual release section styling */
@@ -116,7 +98,7 @@ body {
 .tracklist {
     list-style: decimal inside;
     color: #e0e6ed;
-    flex: 1; /* Allow tracklist to take up remaining space */
+    flex: 1;  /* Allow tracklist to take up remaining space */
 }
 
 .details-link {
@@ -127,7 +109,20 @@ body {
     font-size: 0.9em;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    /* Maintain row layout for .container */
+    .container {
+        display: flex;
+    }
+
+    /* Adjust sidebar width for smaller screens */
+    .sidebar {
+        max-width: 150px;
+        margin-right: 10px;
+    }
+
+    /* Adjust image size to fit smaller screens */
     .cover-image {
         max-width: 100px;
     }
