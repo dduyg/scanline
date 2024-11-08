@@ -59,11 +59,11 @@
 }
 
 .date, .artist {
-    opacity: .8;
+    opacity: .6;
 }
 
 .type {
-    color: white;
+    color: gainsboro;
     font-style: italic;
 }
 
@@ -73,9 +73,10 @@
     gap: 20px;
 }
 
-.cover-image {
+.cover {
     width: 100%;
     max-width: 200px;
+    background-color: #F5F5DC;
 }
 
 .tracklist {
@@ -86,7 +87,7 @@
 .details-link {
     display: inline-block;
     margin-top: 15px;
-    color: white;
+    color: gainsboro;
     text-decoration: none;
     font-size: 0.9em;
 }
@@ -97,7 +98,7 @@
         max-width: 150px;
         margin-right: 10px;
     }
-    .cover-image {
+    .cover {
         max-width: 100px; /* Reduce image size to fit better on smaller screens */   
     }
 }
@@ -125,12 +126,11 @@
 
                 <!-- Image and Tracklist Row -->
                 <div class="details">
-                    <img src="path/to/butcher-knife.jpg" alt="butcher knife cover" class="cover-image">
+                    <div class="cover"></div>
                     <ol class="tracklist">
                         <li>夜顔の告白</li>
                         <li>亡き乙女のためのII (Remixed by Yamato Kasai from Mili)</li>
                         <li>シンデレラ・コンプレックス (Remixed by 雄之助)</li>
-                        <li>metaphor (Remixed by yuigot)</li>
                     </ol>
                 </div>
                 
@@ -150,9 +150,10 @@
 
                 <!-- Image and Tracklist Row -->
                 <div class="details">
-                    <img src="path/to/kimera.jpg" alt="kimera cover" class="cover-image">
+                    <div class="cover"></div>
                     <ol class="tracklist">
                         <li>きめら</li>
+                        <li>metaphor (Remixed by yuigot)</li>
                     </ol>
                 </div>
 
