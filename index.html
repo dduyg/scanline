@@ -3,163 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Loop</title>
+    <title>Portfolio</title>
     <style>
-        /* Reset and basic styling */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #515755;
-            color: #F5F5DC;
-        }
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
         
-        .sidebar {
-            flex: 1;
-            margin-right: 20px;
-        }
-        .sidebar h1 {
-            font-size: 1.2em;
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
         }
         
-        .content {
-            flex: 3;
+        .container {
+            width: 90%;
+            max-width: 600px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .item {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 16px;
         }
-        .release {
-            padding-bottom: 20px;
+        
+        .item:not(:last-child) {
+            border-bottom: 1px solid #555;
         }
-
-.title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-/* Metadata row styling */
-.metadata {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 0.9em;
-}
-
-.date, .artist {
-    opacity: .6;
-}
-
-.type {
-    color: gainsboro;
-    font-style: italic;
-}
-
-/* Details layout for image and tracklist */
-.details {
-    display: flex;
-    gap: 20px;
-}
-
-.cover {
-    width: 100%;
-    max-width: 200px;
-    background-color: beige;
-}
-
-.tracklist {
-    list-style: decimal inside;
-    flex: 1;  /* Allow tracklist to take up remaining space */
-}
-
-.details-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: gainsboro;
-    text-decoration: none;
-    font-size: 0.9em;
-}
-
-@media (max-width: 768px) {
-    /* Adjust sidebar width for smaller screens */
-    .sidebar {
-        max-width: 150px;
-        margin-right: 10px;
-    }
-    .cover {
-        max-width: 100px; /* Reduce image size to fit better on smaller screens */   
-    }
-}
+        
+        .category {
+            font-size: 14px;
+            color: #cccccc;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar Tags -->
-        <aside class="sidebar">
-            <h1>EP Album</h1>
-        </aside>
-
-        <!-- Content Section -->
-        <main class="content">
-            <!-- First Item -->
-            <section class="release">
-                <h2 class="title">butcher knife</h2>
-                
-                <!-- Metadata Row -->
-                <div class="metadata">
-                    <span class="date">2024.09</span>
-                    <span class="artist">samayuzame</span>
-                    <span class="type">EP</span>
-                </div>
-
-                <!-- Image and Tracklist Row -->
-                <div class="details">
-                    <div class="cover"></div>
-                    <ol class="tracklist">
-                        <li>夜顔の告白</li>
-                        <li>亡き乙女のためのII (Remixed by Yamato Kasai from Mili)</li>
-                        <li>シンデレラ・コンプレックス (Remixed by 雄之助)</li>
-                    </ol>
-                </div>
-                
-                <a href="#" class="details-link">View Detail →</a>
-            </section>
-
-            <!-- Second Item -->
-            <section class="release">
-                <h2 class="title">きめら</h2>
-                
-                <!-- Metadata Row -->
-                <div class="metadata">
-                    <span class="date">2024.08</span>
-                    <span class="artist">1e1</span>
-                    <span class="type">Featuring</span>
-                </div>
-
-                <!-- Image and Tracklist Row -->
-                <div class="details">
-                    <div class="cover"></div>
-                    <ol class="tracklist">
-                        <li>きめら</li>
-                        <li>metaphor (Remixed by yuigot)</li>
-                    </ol>
-                </div>
-
-                <a href="#" class="details-link">View Detail →</a>
-            </section>
-        </main>
+        <div class="title">Work</div>
+        <div class="item">
+            <span>sharlee</span>
+            <span class="category">Branding</span>
+        </div>
+        <div class="item">
+            <span>act responsable</span>
+            <span class="category">Web Development</span>
+        </div>
+        <div class="item">
+            <span>dua lipa</span>
+            <span class="category">Portrait</span>
+        </div>
+        <div class="item">
+            <span>cocolyze</span>
+            <span class="category">UX/UI Design</span>
+        </div>
+        <div class="item">
+            <span>les indécis</span>
+            <span class="category">Branding</span>
+        </div>
+        <div class="item">
+            <span>game of the goose</span>
+            <span class="category">Game Design</span>
+        </div>
+        <div class="item">
+            <span>l'équipe explore</span>
+            <span class="category">Illustration</span>
+        </div>
+        <div class="item">
+            <span>silhouette</span>
+            <span class="category">Portrait</span>
+        </div>
+        <div class="item">
+            <span>portraits</span>
+            <span class="category">Portrait</span>
+        </div>
     </div>
 </body>
 </html>
