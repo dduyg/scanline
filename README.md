@@ -1,6 +1,6 @@
 # JavaScript comments
 
-- *Single-Line Comment with Separator:*
+> *Single-Line Comment with Separator:*
 
 ```jsx
 // =========================
@@ -8,7 +8,9 @@
 // =========================
 ```
 
-- *Multi-Line Comment with Separator:*
+<br><br>
+
+> *Multi-Line Comment with Separator:*
 
 ```jsx
 /*******************************
@@ -16,7 +18,9 @@
 *******************************/
 ```
 
-- *Banner Comment with ASCII Art:*
+<br><br>
+
+> *Banner Comment with ASCII Art:*
 
 ```jsx
 /**********************************************
@@ -42,15 +46,18 @@
 */
 ```
 
-- *Underlined Comment:*
+<br><br>
+
+> *Underlined Comment:*
 
 ```jsx
 // Topic Introduction
 // ------------------
 ```
 
----
+<br><br>
 
+---
 ```jsx
 ///////////////////////////////////////////////////////
 ////// Title-related Code
