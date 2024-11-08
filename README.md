@@ -1,16 +1,10 @@
 # Key Binding Buttons
-
 *You can use the* `<kbd>` *tag.*
 
 <br>
-<br>
 
-## Link Outside
-
-*The whole button is clickable,* <br>
-*but doesn't have any color.*
-
-<br>
+### Link Outside
+*The whole button is clickable, but doesn't have any color.*
 
 [<kbd> <br> Title <br> </kbd>][Link]
 
@@ -23,16 +17,12 @@
 ```markdown
 [Link]: # 'Link with example title.'
 ```
-
-<br> 
+ 
 <br>
 
-## Link Inside
+### Link Inside
 
-*The button text is link colored,* <br>
-*but only the text is clickable.*
-
-<br>
+*The button text is link colored, but only the text is clickable.*
 
 <kbd> <br> [Title][Link] <br> </kbd>
 
@@ -53,15 +43,8 @@
 
 [Link]: #
 
-
-
-
-
 # Shield Buttons
-
 *You can use **Badges** as buttons.*
-
-<br>
 
 [![Button Click]][Link] 
 [![Button Hover]][Link] 
@@ -88,13 +71,9 @@
 [Button Example]: https://img.shields.io/badge/Title-37a779?style=for-the-badge
 ```
 
-
-
-<br>
 <br>
 
-## Icons
-
+### Icons
 *You can also use icons to indicate intent.*
 
 [![Button Icon]][Link] 
