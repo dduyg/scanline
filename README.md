@@ -3,4 +3,5 @@
 | ■  | ■   |
 | ■  | ■   |
 
-https://img.shields.io/badge/Click_Me!-37a779?style=for-the-badge
+
+<img src="https://img.shields.io/badge/■FFF1E6-FFF1E6?style=for-the-badge"/>
