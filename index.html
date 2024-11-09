@@ -21,15 +21,19 @@
             max-width: 800px;
         }
         
-        .header {
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
-        .header h1 {  
-            font-size: 24px;
-            text-transform: uppercase;  
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+        }
+        header .number {
+            font-size: 1.5rem;
+            color: #B0B0B0;       
         }
         
         .item {
@@ -37,10 +41,10 @@
             justify-content: space-between;
             padding: 0.5em 0;
             font-size: 16px;
-        }      
+        }
         .item:not(:last-child) {
             border-bottom: 1px solid;
-        }      
+        }
         .type {
             font-size: 14px;
             color: #cccccc;
@@ -49,10 +53,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <header>
             <h1>Works</h1>
             <span class="number">9</span>
-        </div>
+        </header>
         
         <div class="item">
             <span class="name">sharlee</span>
