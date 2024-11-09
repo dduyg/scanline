@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Liminal Loop</title>
     <style>
         body {
             margin: 0;
@@ -18,29 +18,30 @@
         }     
         .container {
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
         }
         
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
+        }
+        .header h1 {  
+            font-size: 24px;
+            text-transform: uppercase;  
         }
         
         .item {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
+            padding: 0.5em 0;
             font-size: 16px;
-        }
-        
+        }      
         .item:not(:last-child) {
             border-bottom: 1px solid #555;
-        }
-        
-        .category {
+        }      
+        .type {
             font-size: 14px;
             color: #cccccc;
         }
@@ -48,42 +49,38 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">Work</div>
+        <div class="header">
+            <h1>Works</h1>
+            <span class="number">9</span>
+        </div>
+        
         <div class="item">
-            <span>sharlee</span>
-            <span class="category">Branding</span>
+            <span class="name">sharlee</span>
+            <span class="type">Branding</span>
         </div>
         <div class="item">
-            <span>act responsable</span>
-            <span class="category">Web Development</span>
+            <span class="name">act responsable</span>
+            <span class="type">Web Development</span>
         </div>
         <div class="item">
-            <span>dua lipa</span>
-            <span class="category">Portrait</span>
+            <span class="name">dua lipa</span>
+            <span class="type">Portrait</span>
         </div>
         <div class="item">
-            <span>cocolyze</span>
-            <span class="category">UX/UI Design</span>
+            <span class="name">cocolyze</span>
+            <span class="type">UX/UI Design</span>
         </div>
         <div class="item">
-            <span>les indécis</span>
-            <span class="category">Branding</span>
+            <span class="name">les indécis</span>
+            <span class="type">Branding</span>
         </div>
         <div class="item">
-            <span>game of the goose</span>
-            <span class="category">Game Design</span>
+            <span class="name">game of the goose</span>
+            <span class="type">Game Design</span>
         </div>
         <div class="item">
-            <span>l'équipe explore</span>
-            <span class="category">Illustration</span>
-        </div>
-        <div class="item">
-            <span>silhouette</span>
-            <span class="category">Portrait</span>
-        </div>
-        <div class="item">
-            <span>portraits</span>
-            <span class="category">Portrait</span>
+            <span class="name">l'équipe explore</span>
+            <span class="type">Illustration</span>
         </div>
     </div>
 </body>
